@@ -1,0 +1,8 @@
+{
+  "name": "BJP_ion",
+  "app_id": "48bf3767",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
