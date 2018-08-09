@@ -14,3 +14,123 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-app.md{
+    font-family: "Roboto";
+    page-login{
+        text-align: center;
+        ion-content{
+            background-image: url('../../assets/imgs/login-banner.jpg');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 100%;
+        }
+        .login-content{
+            .logo-row{
+                img{
+                    max-width: 300px;
+                }
+                p{
+                    font-size: 22px;
+                    color: #fff;
+                    font-weight: 600;
+                    margin-top: 15px;
+                    margin-bottom: 0px;
+                }
+            }
+            .login-box{
+                width: 470px;
+                margin: 0 auto;
+                margin-top: 50px;
+                background: #fff;
+                padding: 45px;
+                border: 1px solid #e1e1e1;
+                box-shadow: 0px 0px 0px #fff;
+                border-radius: 5px;
+                ion-list{
+                    margin: 0px;
+                }
+                h2{
+                    font-size: 22px;
+                    color: #000000;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    text-align: left;
+                }
+                ion-label{
+                    font-size: 12px;
+                    color: #000;
+                    text-transform: uppercase;
+                    padding-bottom: 8px;
+                }
+                .item-inner{
+                    padding-right: 0px;
+                    ion-input{
+                        border: 1px solid #b7b7b7;
+                        border-radius: 2px;
+                        padding: 5px 10px;
+                    }
+                }
+                .sign-row{
+                    .col{
+                        padding: 0px;
+                    }
+                    ion-item{
+                        padding-left: 0px;
+                    }
+                    .signed-in-check{
+                        ion-checkbox{
+                            margin-right: 5px;
+                            margin-left: 0px;
+                            margin-top: 0px;
+                        }
+                    }
+                    .register-btn{
+                        padding: 0px;
+                    }
+                    .item-inner{
+                        border: none;
+                    }
+                }
+                .submit-btn{
+                    background: #f6821f;
+                    box-shadow: none;
+                    border-radius: 2px;
+                    padding: 22px 10px;
+                    font-size: 18px;
+                    &:hover{
+                        background: rgba(246, 130, 31, 0.8);
+                    }
+                    &[disabled]{
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: 1366px){
+            .login-content {            
+                .login-box{
+                    padding: 25px;
+                    margin-top: 25px;
+                }
+                .logo-row{
+                    img{
+                        max-width: 200px;
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: 767px) {
+            .login-content {            
+                .login-box{
+                    width: 90%;
+                }
+            }
+         }
+    }
+}
+.text-input{
+    outline: none;
+}
+.scroll-content{
+    overflow: auto;
+}

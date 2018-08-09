@@ -6,8 +6,8 @@
 -->
 <ion-content class="login-content" padding>
   <ion-row class="logo-row">
-    <ion-col width-70>
-      <img src="assets/imgs/u4.png" />
+    <ion-col width-70 class="login-title">
+      <img src="assets/imgs/logo.png" />
       <p>Shakti Kendra and Booth Committee Data Management System</p>
     </ion-col>
   </ion-row>
@@ -16,21 +16,36 @@
       <ion-row>
         <ion-col>
           <ion-list inset>
-
+            <h2>Login</h2>
             <ion-item>
-              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.username" required></ion-input>
+              <ion-label stacked>username</ion-label>
+              <ion-input type="text" name="email" [(ngModel)]="registerCredentials.username" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+              <ion-label stacked>password</ion-label>
+              <ion-input type="password"  name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
             </ion-item>
           </ion-list>
         </ion-col>
       </ion-row>
 
+      <ion-grid>
+        <ion-row class="sign-row">
+          <ion-col col-6>
+              <ion-item class="signed-in-check">
+                <ion-label>Stay Signed in</ion-label>
+                <ion-checkbox color="dark" checked="true"></ion-checkbox>
+              </ion-item>
+          </ion-col>
+          <ion-col col-6>
+              <button ion-button class="register-btn" block clear (click)="createAccount()">Forgot Password?</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
       <ion-row>
         <ion-col class="signup-col">
           <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
-          <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>
         </ion-col>
       </ion-row>
     </form>
