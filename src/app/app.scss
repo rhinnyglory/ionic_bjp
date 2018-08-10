@@ -195,10 +195,18 @@ page-home{
         }
     }
 }
+page-dashboard-list{
+    ion-content{
+        margin-top: 85px;
+    }
+}
 page-booth-list{
     ion-content{
-        margin-top: 70px;
+        margin-top: 85px;
     }
+}
+.text-right{
+    text-align: right;
 }
 .page-title{
     padding: 30px 0px;
