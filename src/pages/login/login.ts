@@ -18,7 +18,7 @@ import { HomePage } from './../home/home';
 })
 export class LoginPage {
   loading: Loading;
-  registerCredentials = { username: '', password: '' };
+  registerCredentials = { username: 'piyush.sutariya@credencys.com', password: '123456' };
   errMsg: string;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -36,7 +36,8 @@ export class LoginPage {
     this.authServe.login(this.registerCredentials).subscribe((token: HttpResponse<any>) => {
       console.log(token, '123');
       if (token.body.status) {
-          const xToken = token.headers.get('x-bjp-access-token');
+        const userData = token.body.data;
+          const xToken = userData['x-bjp-access-token'];
           localStorage.setItem('auth', xToken);
           console.log(localStorage.getItem('auth'), xToken);
           this.navCtrl.push(HomePage);

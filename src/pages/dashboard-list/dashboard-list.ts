@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { HomePage } from './../home/home';
 /**
  * Generated class for the DashboardListPage page.
  *
@@ -14,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'dashboard-list.html',
 })
 export class DashboardListPage {
-
+  chatRoot = HomePage;  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
