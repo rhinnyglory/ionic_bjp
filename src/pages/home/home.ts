@@ -14,5 +14,6 @@ export class HomePage {
   }
 view(){
   this.navCtrl.push(DashboardListPage);
+  // alert("called")
 }
 }

@@ -1,51 +1,19 @@
-
-<ion-header>
-  <div class="container">
-    <ion-navbar>
-      <!-- <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button> -->
-      <div class="container">
-          <ion-grid>
-              <ion-row>
-                <ion-col col-4>
-                    <img src="assets/imgs/logo-head.png" />
-                </ion-col>
-                <ion-col col-8>
-                    <div class="nav">
-                      <ul>
-                        <li>
-                          <a href="#">dashboard</a>
-                        </li>
-                        <li>
-                          <a href="#">booth committee</a>
-                        </li>
-                        <li>
-                          <a href="#">shakti kendra</a>
-                        </li>
-                        <li>
-                          <a href="#">reports</a>
-                        </li>
-                        <li>
-                          <a href="#">user</a>
-                        </li>
-                      </ul>
-                    </div>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-      </div>
-
-    </ion-navbar>
-  </div>
-</ion-header>
+<page-header></page-header>
 
 <ion-content padding>
-    <div class="home-banner"></div>
+    <div class="home-banner">
+        <div class="container">
+            <div class="home-text">
+                <h2>eak bharat</h2>
+                <h2 class="text-orange">Shreshtha bharat</h2>
+            </div>
+            <img src="../../assets/imgs/mota-bhai.png" alt="modi">
+        </div>
+    </div>
     <div class="container">
-        <h2 class="page-title">
-            dashboard
-        </h2>
+        <div class="page-title">
+            <h2>dashboard</h2>
+        </div>
         <h3 class="sub-title">
           booth committee
           <a href="javascript:void(0)" (click)="view()">view all</a>
@@ -250,19 +218,4 @@
         </div>
     </div>
 </ion-content>
-<ion-footer>
-    <ul>
-      <li>
-        <a href="#">Copyright © 2018</a> |
-      </li>
-      <li>
-        <a href="#">privacy policy</a> |
-      </li>
-      <li>
-          <a href="#">disclaimer</a> |
-      </li>
-      <li>
-        <a href="#">sitemap</a>
-      </li>
-    </ul>
-</ion-footer>
+<page-footer></page-footer>

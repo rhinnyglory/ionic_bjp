@@ -5,10 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
+import { HeaderPage } from '../pages/header/header';
+import { FooterPage } from '../pages/footer/footer';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { DashboardListPage } from '../pages/dashboard-list/dashboard-list';
+import { BoothListPage } from './../pages/booth-list/booth-list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,10 +20,13 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 @NgModule({
   declarations: [
     MyApp,
+    HeaderPage,
     HomePage,
+    FooterPage,
     ListPage,
     LoginPage,
-    DashboardListPage
+    DashboardListPage,
+    BoothListPage,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +38,11 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   entryComponents: [
     MyApp,
     HomePage,
+    FooterPage,
     ListPage,
     LoginPage,
-    DashboardListPage
+    DashboardListPage,
+    BoothListPage,
   ],
   providers: [
     StatusBar,
