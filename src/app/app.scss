@@ -22,6 +22,7 @@ page-login{
     text-align: center;
     .scroll-content{
         margin-bottom: 0px;
+        padding-top: 30px !important;
     }
     ion-content{
         background-image: url('../../assets/imgs/login-banner.jpg');
@@ -29,6 +30,7 @@ page-login{
         background-position: center top;
         background-size: 100%;
         top: 0px;
+        padding-top: 20px;
     }
     .login-content{
         .logo-row{
@@ -46,7 +48,7 @@ page-login{
         .login-box{
             width: 470px;
             margin: 0 auto;
-            margin-top: 50px;
+            margin-top: 30px;
             background-color: #fff;
             padding: 45px;
             border: 1px solid #e1e1e1;
@@ -123,6 +125,9 @@ page-login{
         }
     }
     @media only screen and (max-width: 1366px){
+        .scroll-content{
+            padding-top: 15px !important;
+        }
         .login-content {            
             .login-box{
                 padding: 25px;
@@ -147,6 +152,9 @@ page-home{
     ion-header{
         background: rgba(0,0,0,0.5);
         border-bottom: none;
+        &:before{
+            display: none;
+        }
         .nav{
             ul{
                 li{
@@ -197,16 +205,183 @@ page-home{
 }
 page-dashboard-list{
     ion-content{
-        margin-top: 85px;
+        margin-top: 84px;
+        .page-title{
+            padding: 15px 0px;
+            padding-bottom: 0px;
+            margin-bottom: 0px !important;
+            border-bottom: none;
+        }
+        ion-toolbar{
+            padding: 0px !important;
+            .toolbar-background-md{
+                background: transparent;
+            }
+            ion-segment{
+                float: left;
+                width: 100%;
+                display: block;
+                ion-segment-button{
+                    width: 200px !important;
+                    float: left;
+                    font-size: 15px !important;
+                    text-transform: capitalize !important;
+                    border-bottom: none !important;
+                    color: rgba(0,0,0,0.6);
+                    &.segment-activated{
+                        color: #f6821f !important;
+                        border: 1px solid #ccc !important;
+                        border-bottom: none !important;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                    }
+                }
+                &:after{
+                    content: '';
+                    position: absolute;
+                    left: 0px;
+                    bottom: 6px;
+                    width: 100%;
+                    height: 1px;
+                    background: #ccc;
+                }
+            }
+        }
     }
 }
 page-booth-list{
+    .scroll-content{
+        margin-bottom: 140px;
+    }
     ion-content{
-        margin-top: 85px;
+        margin-top: 84px;
+        .page-title{
+            padding: 15px 0px;
+        }
+        .booth-list{
+            display: flex;
+            border: 1px solid #e1e1e1;
+            margin-bottom: 20px;
+            .list-cmt{
+                flex: 1;
+                .list-single{
+                    margin-bottom: 0px;
+                    border: none;
+                    li:nth-child(1n+7){
+                        margin-top: 20px;
+                    }
+                }
+            }
+            .booth-action{
+                width: 150px;
+                text-align: center;
+                padding-top: 20px;
+                border-left: 1px dashed #e1e1e1;
+                .button{
+                    display: block;
+                    margin: 8px auto;
+                    width: 100px;
+                }
+            }
+        }
+    }
+}
+
+page-add-booth{
+    ion-content{
+        margin-top: 84px;
+        .scroll-content{
+            margin-bottom: 140px;
+            .btn-group{
+                margin-bottom: 15px;
+            }
+            .bjp-btn{
+                width: 120px;
+                font-size: 18px;
+                padding: 20px 0px;
+                border-radius: 2px;
+            }
+        }
+    }
+}
+.booth-form{
+    border-bottom: 1px solid #b7b7b7;
+    margin-bottom: 15px;
+    &+.booth-form{
+        margin-top: 20px;
+    }
+    .sub-title{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    label{
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 5px;
+        display: block;
+    }
+    ion-select{
+        max-width: 100%;
+        border: 1px solid #b7b7b7;
+        border-radius: 2px;
+    }
+    ion-input{
+        input{
+            margin: 0px;
+            border: 1px solid #b7b7b7;
+            padding: 15px 5px;
+            width: 100%;
+        }
+    }
+    .grid{
+        padding: 0px;
+        .row{
+            margin: 0 -15px;
+            margin-bottom: 20px;
+            .col{
+                padding: 5px 15px;
+            }
+        }
     }
 }
 .text-right{
     text-align: right;
+}
+.bjp-btn{
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 16px;
+    box-shadow: none;
+    padding: 5px 15px;
+}
+.grey-btn{
+    background: transparent;
+    color: rgba(0,0,0,0.6);
+    border: 1px solid rgba(0,0,0,0.6);
+    img{
+        opacity: 0.6;
+        margin-right: 5px;
+        width: 20px;
+    }
+    &:hover{
+        background: transparent !important;
+    }
+}
+.red-btn{
+    background: #ff5f5f;
+    border: 1px solid #db3535;
+}
+.dark-grey-btn{
+    background: #8b8b8b;
+    border: 1px solid #737373;
+}
+.orange-btn{
+    background: #f6821f;
+    border: 1px solid #f6821f;
+    &:hover{
+        background: rgba(246, 130, 31, 0.8) !important;
+    }
 }
 .page-title{
     padding: 30px 0px;
@@ -245,6 +420,7 @@ page-booth-list{
                 float: left;
                 list-style: none;
                 width: 16.5%;
+                text-transform: capitalize;
                 label{
                     margin-bottom: 10px;
                     display: block;
@@ -254,6 +430,15 @@ page-booth-list{
                 p{
                     margin: 0px;
                     font-size: 16px;
+                }
+            }
+        }
+    }
+    &.district-wise{
+        .list-single{
+            ul{
+                li{
+                    width: 20%;
                 }
             }
         }
@@ -277,6 +462,21 @@ page-booth-list{
 ion-header{
     background: #f5f5f5;
     border-bottom: 1px solid #e0e0e0;
+    &:before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 42%;
+        background-color: #f6821f;
+        transform: skew(20deg);
+        -webkit-transform: skew(20deg);
+        -moz-transform: skew(20deg);
+        left: -30px;
+        border-right: 5px solid #00a651;
+    }
+    &:after{
+        background: none !important;
+    }
     .toolbar-background-md{
         background: transparent;
         border-color: transparent;
@@ -341,6 +541,13 @@ ion-footer{
 }
 
 // media query starts
+@media only screen and (min-width: 1600px){
+    ion-header{
+        &:before{
+            width: 40%;
+        }
+    }
+}
 @media only screen and (min-width: 1366px){
     page-home{
         // ion-header{

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddBoothPage } from '../add-booth/add-booth';
 
 /**
  * Generated class for the BoothListPage page.
@@ -20,6 +21,11 @@ export class BoothListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BoothListPage');
+  }
+
+  view(){
+    this.navCtrl.push(AddBoothPage);
+    // alert("called")
   }
 
 }

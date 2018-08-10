@@ -32,6 +32,7 @@ export class LoginPage {
   }
 
   login(){
+    this.navCtrl.push(HomePage);
     console.log(this.registerCredentials, 'rekhjsagdf');
     this.authServe.login(this.registerCredentials).subscribe((token: HttpResponse<any>) => {
       console.log(token, '123');

@@ -12,6 +12,7 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { DashboardListPage } from '../pages/dashboard-list/dashboard-list';
 import { BoothListPage } from './../pages/booth-list/booth-list';
+import { AddBoothPage } from './../pages/add-booth/add-booth';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,6 +28,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     LoginPage,
     DashboardListPage,
     BoothListPage,
+    AddBoothPage
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     LoginPage,
     DashboardListPage,
     BoothListPage,
+    AddBoothPage
   ],
   providers: [
     StatusBar,
