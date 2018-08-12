@@ -17,6 +17,8 @@ import { AddBoothPage } from './../pages/add-booth/add-booth';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { CommonServiceProvider } from '../providers/common-service/common-service';
+import { AddBoothProvider } from '../providers/add-booth/add-booth';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    CommonServiceProvider,
+    AddBoothProvider
   ]
 })
 export class AppModule {}

@@ -11,18 +11,19 @@
               <ion-row>
                 <ion-col>
                     <label for="">state</label>
-                    <ion-select [(ngModel)]="state" interface="popover">
+                    <ion-select [(ngModel)]="boothData.state" interface="popover">
+                        <ion-option *ngFor="let state of states" (ionSelect)="getDistricts(state)" [value]="state">{{state.name}}</ion-option>
+                      </ion-select>
+                    <!-- <ion-select [(ngModel)]="state" interface="popover">
                       <ion-option value="a">Gujarat</ion-option>
                       <ion-option value="b">Maharastra</ion-option>
                       <ion-option value="c">Rajashthan</ion-option>
-                    </ion-select>
+                    </ion-select> -->
                 </ion-col>
                 <ion-col>
                     <label for="">District</label>
-                    <ion-select [(ngModel)]="District" interface="popover">
-                      <ion-option value="a">Gujarat</ion-option>
-                      <ion-option value="b">Maharastra</ion-option>
-                      <ion-option value="c">Rajashthan</ion-option>
+                    <ion-select [(ngModel)]="boothData.district" interface="popover">
+                      <ion-option *ngFor="let dis of districts" value="{{dis.id}}">{{dis.name}}</ion-option>
                     </ion-select>
                   </ion-col>
               <ion-col>

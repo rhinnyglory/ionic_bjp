@@ -1,3 +1,9 @@
-export const ConstantApi = {
-    login: 'login'
+export var ConstantApi = {
+    login: 'login',
+    states: 'get-states',
+    districts: 'get-districts',
+    assemblies: 'get-assembly',
+    mandalas: 'get-mandala',
+    booths: 'get-booth',
+    shaktiKendras: 'get-shakti-kendra'
 }
