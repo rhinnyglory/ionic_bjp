@@ -28,7 +28,8 @@ export class AddBoothPage {
     district: {} as District,
     assembly: {} as Assembly,
     mandala: {} as Mandala,
-    boothNumber: {} as Booth
+    booth: {} as Booth,
+    parentBooth: {} as Booth
   } as Booths;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private boothServe: AddBoothProvider) {
@@ -37,68 +38,75 @@ export class AddBoothPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddBoothPage');
     this.boothServe.getStates().then(data => {
-              if (data.status) {
-                this.states = data.data;
-                console.log('data', this.states);
-                // this.toastr.success('Profile is updated successfully!');
-              }
-            }).catch(err => {
-              // this.loader = false;
-              // this.toastr.error('Profile is not updated!');
-            });
+      if (data.status) {
+        this.states = data.data;
+        console.log('data', this.states);
+        // this.toastr.success('Profile is updated successfully!');
+      }
+    }).catch(err => {
+      // this.loader = false;
+      // this.toastr.error('Profile is not updated!');
+    });
   }
 
-  view(){
+  view() {
     this.navCtrl.push(BoothListPage);
     // alert("called")
   }
 
-  getDistricts(){
+  getDistricts() {
     // console.log(state,'hiii');
-    this.boothServe.getDistricts(this.boothData.state).then(result =>{
-      if(result.status){
+    this.boothServe.getDistricts(this.boothData.state).then(result => {
+      if (result.status) {
         this.districts = result.data;
       }
-    }).catch(error =>{
+    }).catch(error => {
 
     })
   }
 
-  getAssemblies(){
+  getAssemblies() {
     // console.log(assembly,'hiii');
-    this.boothServe.getAssemblies(this.boothData.district).then(result =>{
-      if(result.status){
+    this.boothServe.getAssemblies(this.boothData.district).then(result => {
+      if (result.status) {
         this.assemblies = result.data;
       }
-    }).catch(error =>{
+    }).catch(error => {
 
     })
   }
 
-  getMandalas(){
+  getMandalas() {
     // console.log(assembly,'hiii');
-    this.boothServe.getMandals(this.boothData.assembly).then(result =>{
-      if(result.status){
+    this.boothServe.getMandals(this.boothData.assembly).then(result => {
+      if (result.status) {
         this.mandals = result.data;
       }
-    }).catch(error =>{
+    }).catch(error => {
 
     })
   }
 
-  getBooths(){
+  getBooths() {
     // console.log(assembly,'hiii');
-    this.boothServe.getBoothNumbers(this.boothData.mandala).then(result =>{
-      if(result.status){
+    this.boothServe.getBoothNumbers(this.boothData.mandala).then(result => {
+      if (result.status) {
         this.boothNumbers = result.data;
       }
-    }).catch(error =>{
+    }).catch(error => {
 
     })
   }
 
-  saveBooth(){
+  saveBooth() {
     console.log(this.boothData, 'BoothListPage');
+    this.boothServe.saveBoothCommittee(this.boothData).then(res => {
+      if (res.status) {
+        console.log(res, 'res');
+      }
+    }).catch(err => {
+      console.log(err, 'err');
+    });
   }
 
 }

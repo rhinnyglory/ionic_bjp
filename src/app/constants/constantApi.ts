@@ -5,5 +5,6 @@ export var ConstantApi = {
     assemblies: 'get-assembly',
     mandalas: 'get-mandala',
     booths: 'get-booth',
-    shaktiKendras: 'get-shakti-kendra'
+    shaktiKendras: 'get-shakti-kendra',
+    addBoothCom: 'add-booth-committee'
 }

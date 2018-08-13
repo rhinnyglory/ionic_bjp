@@ -36,9 +36,9 @@
               </ion-row>
               <ion-row>
                   <ion-col col-3>
-                      <label for="">Booth number</label>
-                      <ion-select [(ngModel)]="boothData.boothNumber" interface="popover">
-                        <ion-option *ngFor="let booth of boothNumbers" [value]="booth.id">{{booth.boothNo}}</ion-option>
+                      <label for="">Booth Number</label>
+                      <ion-select [(ngModel)]="boothData.booth" interface="popover">
+                        <ion-option *ngFor="let boothNo of boothNumbers" [value]="boothNo.id">{{boothNo.boothNo}}</ion-option>
                       </ion-select>
                   </ion-col>
                 </ion-row>
@@ -55,7 +55,7 @@
                 </ion-col>
                 <ion-col>
                     <label for="">mobile number</label>
-                    <ion-input [(ngModel)]="boothData.mobile" placeholder="" type="text"></ion-input>
+                    <ion-input [(ngModel)]="boothData.mobileNumber" placeholder="" type="text"></ion-input>
                 </ion-col>
                 <ion-col>
                     <label for="">membership number</label>
@@ -63,10 +63,21 @@
                 </ion-col>
                 <ion-col>
                     <label for="">gender</label>
-                    <ion-select [(ngModel)]="boothData.gender" interface="popover">
+                    <ion-list radio-group [(ngModel)]="boothData.gender">
+                        <ion-item>
+                            <ion-label>Male</ion-label>
+                            <ion-radio checked="true" value="male"></ion-radio>
+                        </ion-item>
+                    
+                        <ion-item>
+                            <ion-label>Female</ion-label>
+                            <ion-radio value="female"></ion-radio>
+                        </ion-item>
+                    </ion-list>
+                    <!-- <ion-select [(ngModel)]="boothData.gender" interface="popover">
                       <ion-option value="male">male</ion-option>
                       <ion-option value="female">female</ion-option>
-                    </ion-select>
+                    </ion-select> -->
                 </ion-col>
               </ion-row>
 
@@ -81,16 +92,22 @@
                   </ion-col>
                   <ion-col>
                       <label for="">my responsibility</label>
-                      <ion-select [(ngModel)]="boothData.myResponsibility" interface="popover">
-                        <ion-option value="a">1</ion-option>
-                        <ion-option value="b">2</ion-option>
+                      <ion-select [(ngModel)]="boothData.responsibility" interface="popover">
+                        <ion-option value="Booth Prabhari">Booth Prabhari</ion-option>
+                        <ion-option value="President">President</ion-option>
+                        <ion-option value="Secretary">Secretary</ion-option>
+                        <ion-option value="BLA2">BLA2</ion-option>
+                        <ion-option value="Mahila Pramukh">Mahila Pramukh</ion-option>
+                        <ion-option value="Member">Member</ion-option>
                       </ion-select>
                   </ion-col>
                   <ion-col>
                       <label for="">incharge</label>
                       <ion-select [(ngModel)]="boothData.incharge" interface="popover">
-                        <ion-option value="a">1</ion-option>
-                        <ion-option value="b">2</ion-option>
+                        <ion-option value="WhatsApp Group">WhatsApp Group</ion-option>
+                        <ion-option value="Mann Ki Baat">Mann Ki Baat</ion-option>
+                        <ion-option value="Booth Program">Booth Program</ion-option>
+                        <ion-option value="None of the above">None of the above</ion-option>
                       </ion-select>
                   </ion-col>
                 </ion-row>
@@ -98,10 +115,21 @@
                 <ion-row>
                     <ion-col col-3>
                         <label for="">bike status</label>
-                        <ion-select [(ngModel)]="boothData.bikeStatus" interface="popover">
+                        <ion-list radio-group [(ngModel)]="boothData.bikeStatus">
+                            <ion-item>
+                                <ion-label>yes</ion-label>
+                                <ion-radio checked="true" value="yes"></ion-radio>
+                            </ion-item>
+                        
+                            <ion-item>
+                                <ion-label>no</ion-label>
+                                <ion-radio value="no"></ion-radio>
+                            </ion-item>
+                        </ion-list>
+                        <!-- <ion-select [(ngModel)]="boothData.bikeStatus" interface="popover">
                             <ion-option value="a">1</ion-option>
                             <ion-option value="b">2</ion-option>
-                          </ion-select>
+                          </ion-select> -->
                     </ion-col>
                     <ion-col col-6>
                         <label for="">address</label>
@@ -123,9 +151,11 @@
                 <ion-col>
                     <label for="">category</label>
                     <ion-select [(ngModel)]="boothData.category" interface="popover">
-                      <ion-option value="a">1</ion-option>
-                      <ion-option value="b">3</ion-option>
-                      <ion-option value="c">2</ion-option>
+                      <ion-option value="General">General</ion-option>
+                      <ion-option value="OBC">OBC</ion-option>
+                      <ion-option value="SC">SC</ion-option>
+                      <ion-option value="ST">ST</ion-option>
+                      <ion-option value="Minority">Minority</ion-option>
                     </ion-select>
                 </ion-col>
                 <ion-col>
@@ -134,14 +164,19 @@
                   </ion-col>
               <ion-col>
                   <label for="">whatsapp number</label>
-                  <ion-input [(ngModel)]="boothData.whatsAppNumber" placeholder="" type="text"></ion-input>
+                  <ion-input [(ngModel)]="boothData.whatsappNo" placeholder="" type="text"></ion-input>
                 </ion-col>
             <ion-col>
                 <label for="">education</label>
                 <ion-select [(ngModel)]="boothData.education" interface="popover">
-                  <ion-option value="a">1</ion-option>
-                  <ion-option value="b">2</ion-option>
-                  <ion-option value="c">3</ion-option>
+                  <ion-option value="Under Matriculation">Under Matriculation</ion-option>
+                  <ion-option value="Matriculation">Matriculation</ion-option>
+                  <ion-option value="PUC">PUC</ion-option>
+                  <ion-option value="Graduate">Graduate</ion-option>
+                  <ion-option value="Post Graduate">Post Graduate</ion-option>
+                  <ion-option value="Doctorate">Doctorate</ion-option>
+                  <ion-option value="Other">Other</ion-option>
+                  <ion-option value="No Info">No Info</ion-option>
                 </ion-select>
             </ion-col>
               </ion-row>
@@ -149,9 +184,21 @@
                   <ion-col col-3>
                       <label for="">profession</label>
                       <ion-select [(ngModel)]="boothData.profession" interface="popover">
-                        <ion-option value="a">1</ion-option>
-                        <ion-option value="b">2</ion-option>
-                        <ion-option value="c">3</ion-option>
+                            <ion-option value="Agriculturist">Agriculturist</ion-option>
+                            <ion-option value="Business">Business</ion-option>
+                            <ion-option value="Employee">Employee</ion-option>
+                            <ion-option value="Labor">Labor</ion-option>
+                            <ion-option value="Lawyer">Lawyer</ion-option>
+                            <ion-option value="Doctor">Doctor</ion-option>
+                            <ion-option value="Engineer">Engineer</ion-option>
+                            <ion-option value="Teacher">Teacher</ion-option>
+                            <ion-option value="House Wife">House Wife</ion-option>
+                            <ion-option value="Social Activist">Social Activist</ion-option>
+                            <ion-option value="Coolie">Coolie</ion-option>
+                            <ion-option value="Driver">Driver</ion-option>
+                            <ion-option value="Student">Student</ion-option>
+                            <ion-option value="Jobless">Jobless</ion-option>
+                            <ion-option value="Other">Other</ion-option>
                       </ion-select>
                   </ion-col>
                 </ion-row>
@@ -170,10 +217,13 @@
             <ion-col>
                 <label for="">parent booth</label>
                 <ion-select [(ngModel)]="boothData.parentBooth" interface="popover">
+                    <ion-option *ngFor="let booth of boothNumbers" [value]="booth.id">{{booth.boothNo}}</ion-option>
+                </ion-select>
+                <!-- <ion-select [(ngModel)]="boothData.parentBooth" interface="popover">
                   <ion-option value="a">1</ion-option>
                   <ion-option value="b">2</ion-option>
                   <ion-option value="c">3</ion-option>
-                </ion-select>
+                </ion-select> -->
             </ion-col>
               </ion-row>
             </ion-grid>

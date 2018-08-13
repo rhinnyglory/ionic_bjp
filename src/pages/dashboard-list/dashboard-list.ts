@@ -9,10 +9,7 @@ import { HomePage } from './../home/home';
  * Ionic pages and navigation.
  */
 
-@IonicPage({
-  name: 'home-page',
-  segment: 'home'
-})
+@IonicPage()
 @Component({
   selector: 'page-dashboard-list',
   templateUrl: 'dashboard-list.html',

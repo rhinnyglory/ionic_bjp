@@ -37,4 +37,8 @@ export class AddBoothProvider {
     return this.httpcaller.httpcall(ConstantApi.booths + '/' + MandalId, 'get', {});
   }
 
+  saveBoothCommittee(data: object){
+    return this.httpcaller.httpcall(ConstantApi.addBoothCom , 'post', data);
+  }
+
 }
