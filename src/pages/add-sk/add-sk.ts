@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AddSkPage } from '../add-sk/add-sk'
 
 /**
- * Generated class for the ShaktiKendraListPage page.
+ * Generated class for the AddSkPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,21 +10,16 @@ import { AddSkPage } from '../add-sk/add-sk'
 
 @IonicPage()
 @Component({
-  selector: 'page-shakti-kendra-list',
-  templateUrl: 'shakti-kendra-list.html',
+  selector: 'page-add-sk',
+  templateUrl: 'add-sk.html',
 })
-export class ShaktiKendraListPage {
+export class AddSkPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ShaktiKendraListPage');
-  }
-
-  addSk(){
-    this.navCtrl.push(AddSkPage);
-    //alert("called")
+    console.log('ionViewDidLoad AddSkPage');
   }
 
 }

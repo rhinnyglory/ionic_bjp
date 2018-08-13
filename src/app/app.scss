@@ -31,6 +31,7 @@ page-login{
         background-size: 100%;
         top: 0px;
         padding-top: 20px;
+        margin-top: 0px;
     }
     .login-content{
         .logo-row{
@@ -166,6 +167,7 @@ page-home{
         }
     }
     ion-content{
+        margin-top: 0px;
         .home-banner{
             background-image: url(../assets/imgs/home-banner.jpg);
             background-size: cover;
@@ -202,10 +204,12 @@ page-home{
             }
         }
     }
+    .scroll-content{
+        margin-bottom: 60px;
+    }
 }
 page-dashboard-list{
     ion-content{
-        margin-top: 84px;
         .page-title{
             padding: 15px 0px;
             padding-bottom: 0px;
@@ -227,62 +231,47 @@ page-dashboard-list{
                     font-size: 15px !important;
                     text-transform: capitalize !important;
                     border-bottom: none !important;
-                    color: rgba(0,0,0,0.6);
+                    color: rgba(0,0,0,0.6) !important;
                     &.segment-activated{
                         color: #f6821f !important;
                         border: 1px solid #ccc !important;
                         border-bottom: none !important;
                         border-top-left-radius: 5px;
                         border-top-right-radius: 5px;
+                        position: relative;
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            height: 1px;
+                            width: 200px;
+                            background: #fff;
+                            bottom: 1px;
+                            left: 0px;
+                            z-index: 99;
+                        }
                     }
                 }
                 &:after{
                     content: '';
                     position: absolute;
                     left: 0px;
-                    bottom: 6px;
+                    bottom: -10px;
                     width: 100%;
-                    height: 1px;
-                    background: #ccc;
+                    height: 18px;
+                    border-top: 1px solid #ccc;
+                    background: #fff;
                 }
             }
         }
     }
 }
-page-booth-list{
+page-booth-list, page-shakti-kendra-list{
     .scroll-content{
         margin-bottom: 140px;
     }
     ion-content{
-        margin-top: 84px;
         .page-title{
             padding: 15px 0px;
-        }
-        .booth-list{
-            display: flex;
-            border: 1px solid #e1e1e1;
-            margin-bottom: 20px;
-            .list-cmt{
-                flex: 1;
-                .list-single{
-                    margin-bottom: 0px;
-                    border: none;
-                    li:nth-child(1n+7){
-                        margin-top: 20px;
-                    }
-                }
-            }
-            .booth-action{
-                width: 150px;
-                text-align: center;
-                padding-top: 20px;
-                border-left: 1px dashed #e1e1e1;
-                .button{
-                    display: block;
-                    margin: 8px auto;
-                    width: 100px;
-                }
-            }
         }
     }
 }
@@ -297,10 +286,48 @@ page-add-booth{
             }
             .bjp-btn{
                 width: 120px;
-                font-size: 18px;
-                padding: 20px 0px;
+                font-size: 16px;
+                padding: 18px 15px;
                 border-radius: 2px;
             }
+        }
+    }
+}
+
+page-add-sk{
+    .btn-group{
+        margin-bottom: 15px;
+    }
+    .bjp-btn{
+        padding: 18px 15px;
+        font-size: 16px;
+        min-width: 120px;
+        border-radius: 2px;
+    }
+}
+.booth-list{
+    display: flex;
+    border: 1px solid #e1e1e1;
+    margin-bottom: 20px;
+    .list-cmt{
+        flex: 1;
+        .list-single{
+            margin-bottom: 0px;
+            border: none;
+            li:nth-child(1n+7){
+                margin-top: 20px;
+            }
+        }
+    }
+    .booth-action{
+        width: 150px;
+        text-align: center;
+        padding-top: 20px;
+        border-left: 1px dashed #e1e1e1;
+        .button{
+            display: block;
+            margin: 8px auto;
+            width: 100px;
         }
     }
 }
@@ -320,17 +347,21 @@ page-add-booth{
         font-weight: 600;
         margin-bottom: 5px;
         display: block;
+        span{
+            text-transform: initial;
+        }
     }
     ion-select{
         max-width: 100%;
         border: 1px solid #b7b7b7;
         border-radius: 2px;
+        padding: 9px 8px 9px 10px;
     }
     ion-input{
         input{
             margin: 0px;
             border: 1px solid #b7b7b7;
-            padding: 15px 5px;
+            padding: 10px 10px;
             width: 100%;
         }
     }
@@ -348,11 +379,18 @@ page-add-booth{
 .text-right{
     text-align: right;
 }
+.button{
+    margin: 0px;
+    box-shadow: none;
+    text-transform: capitalize;
+}
+.button + .button{
+    margin-left: 5px;
+}
 .bjp-btn{
     border-radius: 5px;
     text-transform: capitalize;
     font-size: 16px;
-    box-shadow: none;
     padding: 5px 15px;
 }
 .grey-btn{
@@ -453,7 +491,7 @@ page-add-booth{
 .scroll-content{
     overflow: auto;
     padding: 0px !important;
-    margin-bottom: 60px;
+    margin-bottom: 140px;
 }
 .container{
     margin: 0 auto;
@@ -513,7 +551,15 @@ ion-header{
         }
     }
 }
+ion-menu{
+    ion-list{
+        ion-label{
+            text-transform: capitalize;
+        }
+    }
+}
 ion-content{
+    margin-top: 84px;
     .fixed-content, .scroll-content{
         margin-top: 0px !important;
     }

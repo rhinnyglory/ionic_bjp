@@ -1,0 +1,198 @@
+<page-header></page-header>
+
+<ion-content padding>
+    <div class="container">
+       <div class="page-title">
+         <h2>shakti kendra bearer entry form</h2>
+       </div>
+       <div class="booth-form">
+          <h3 class="sub-title">shakti kendra details</h3>
+          <ion-grid>
+              <ion-row>
+                <ion-col>
+                    <label for="">state</label>
+                    <ion-select [(ngModel)]="state" interface="popover">
+                        <ion-option [value]="1">s</ion-option>
+                      </ion-select>
+                </ion-col>
+                <ion-col>
+                  <label for="">district</label>
+                  <ion-select [(ngModel)]="district" interface="popover">
+                      <ion-option [value]="1">s</ion-option>
+                    </ion-select>
+                </ion-col>
+                <ion-col>
+                  <label for="">assembly</label>
+                  <ion-select [(ngModel)]="assembly" interface="popover">
+                      <ion-option [value]="1">s</ion-option>
+                    </ion-select>
+                </ion-col>
+                <ion-col>
+                  <label for="">mandala</label>
+                  <ion-select [(ngModel)]="mandala" interface="popover">
+                      <ion-option [value]="1">s</ion-option>
+                    </ion-select>
+                </ion-col>
+                
+              </ion-row>
+              <ion-row>
+                <ion-col col-3>
+                  <label for="">shakti kendra</label>
+                  <ion-select [(ngModel)]="sk" interface="popover">
+                      <ion-option [value]="1">s</ion-option>
+                    </ion-select>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <label for=""><span>Please Enter Booths - ( AC Electoral Roll Release in 2018 )</span></label>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <label for=""><span>1st</span> booth no</label>
+                  <ion-input [(ngModel)]="booth1" placeholder="Enter Booth No" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                  <label for=""><span>2nd</span> booth no</label>
+                  <ion-input [(ngModel)]="booth2" placeholder="Enter Booth No" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                  <label for=""><span>3rd</span> booth no</label>
+                  <ion-input [(ngModel)]="booth3" placeholder="Enter Booth No" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                  <label for=""><span>4th</span> booth no</label>
+                  <ion-input [(ngModel)]="booth4" placeholder="Enter Booth No" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                  <label for=""><span>5th</span> booth no</label>
+                  <ion-input [(ngModel)]="booth5" placeholder="Enter Booth No" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                  <label for=""><span>6th</span> booth no</label>
+                  <ion-input [(ngModel)]="booth6" placeholder="Enter Booth No" type="text"></ion-input>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col col-3>
+                  <label for="">shakti kendra name</label>
+                  <ion-input [(ngModel)]="skname" placeholder="shakti kendra name" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <label for="">&nbsp;</label>
+                  <button ion-button class="orange-btn">edit shakti kendra</button>
+                </ion-col>
+              </ion-row>
+
+            </ion-grid>
+       </div>
+
+       <div class="booth-form">
+          <h3 class="sub-title">basic information</h3>
+          <ion-grid>
+              <ion-row>
+                <ion-col>
+                    <label for="">shakti kendra bearer</label>
+                    <ion-select [(ngModel)]="skbearer" interface="popover">
+                        <ion-option [value]="1">s</ion-option>
+                      </ion-select>
+                </ion-col>
+                <ion-col>
+                  <label for="">full name</label>
+                  <ion-input [(ngModel)]="name" placeholder="full name" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <label for="">mobile number</label>
+                    <ion-input [(ngModel)]="mobile" placeholder="mobile number" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <label for="">membership number</label>
+                    <ion-input [(ngModel)]="membership" placeholder="membership number" type="text"></ion-input>
+                </ion-col>
+                
+              </ion-row>
+             
+              <ion-row>
+                <ion-col>
+                    <label for="">gender</label>
+                    <ion-select [(ngModel)]="gender" interface="popover">
+                        <ion-option [value]="1">s</ion-option>
+                      </ion-select>
+                </ion-col>
+                <ion-col>
+                  <label for="">e-mail id</label>
+                  <ion-input [(ngModel)]="email" placeholder="e-mail id" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <label for="">epic number</label>
+                    <ion-input [(ngModel)]="epicnumber" placeholder="epic number" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <label for="">whatsapp number</label>
+                    <ion-input [(ngModel)]="whatsapp" placeholder="whatsapp number" type="text"></ion-input>
+                </ion-col>
+                
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                    <label for="">bike status</label>
+                    <ion-select [(ngModel)]="bikestatus" interface="popover">
+                        <ion-option [value]="1">s</ion-option>
+                      </ion-select>
+                </ion-col>
+                <ion-col col-6>
+                  <label for="">address</label>
+                  <ion-input [(ngModel)]="address" placeholder="address" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <label for="">pincode</label>
+                    <ion-input [(ngModel)]="pincode" placeholder="pincode" type="text"></ion-input>
+                </ion-col>
+                
+              </ion-row>
+            </ion-grid>
+       </div>
+
+       <div class="booth-form">
+          <h3 class="sub-title">other information</h3>
+          <ion-grid>
+              <ion-row>
+                <ion-col>
+                    <label for="">category</label>
+                    <ion-select [(ngModel)]="category" interface="popover">
+                        <ion-option [value]="1">s</ion-option>
+                      </ion-select>
+                </ion-col>
+                <ion-col>
+                  <label for="">caste</label>
+                  <ion-input [(ngModel)]="caste" placeholder="caste" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <label for="">education</label>
+                    <ion-select [(ngModel)]="education" interface="popover">
+                      <ion-option [value]="1">s</ion-option>
+                    </ion-select>
+                </ion-col>
+                <ion-col>
+                    <label for="">profession</label>
+                    <ion-select [(ngModel)]="profession" interface="popover">
+                      <ion-option [value]="1">s</ion-option>
+                    </ion-select>
+                </ion-col>
+                
+              </ion-row>
+            </ion-grid>
+       </div>
+
+       <div class="btn-group">
+          <button ion-button class="bjp-btn orange-btn" (click)="saveBooth()">save</button>
+          <button ion-button class="bjp-btn grey-btn" (click)="view()">close</button>
+       </div>
+    </div>
+</ion-content>
+
+<page-footer></page-footer>

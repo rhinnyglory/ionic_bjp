@@ -14,12 +14,14 @@ import { DashboardListPage } from '../pages/dashboard-list/dashboard-list';
 import { BoothListPage } from './../pages/booth-list/booth-list';
 import { AddBoothPage } from './../pages/add-booth/add-booth';
 
+import { ShaktiKendraListPage } from './../pages/shakti-kendra-list/shakti-kendra-list';
+import { AddSkPage } from './../pages/add-sk/add-sk';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { CommonServiceProvider } from '../providers/common-service/common-service';
 import { AddBoothProvider } from '../providers/add-booth/add-booth';
-import { ShaktiKendraListPage } from './../pages/shakti-kendra-list/shakti-kendra-list';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { ShaktiKendraListPage } from './../pages/shakti-kendra-list/shakti-kendr
     DashboardListPage,
     BoothListPage,
     AddBoothPage,
-    ShaktiKendraListPage
+    ShaktiKendraListPage,
+    AddSkPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { ShaktiKendraListPage } from './../pages/shakti-kendra-list/shakti-kendr
     DashboardListPage,
     BoothListPage,
     AddBoothPage,
-    ShaktiKendraListPage
+    ShaktiKendraListPage,
+    AddSkPage
   ],
   providers: [
     StatusBar,
