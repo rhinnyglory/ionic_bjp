@@ -22,8 +22,16 @@
                           <li>
                             <a href="javascript:void(0)" (click)="viewSK()">shakti kendra</a>
                           </li>
-                          <li>
+                          <li class="has-submenu" [ngClass]="{'active': isActive}" (click)="isActive = !isActive">
                             <a href="#">reports</a>
+                            <ul class="sub-nav">
+                              <li>
+                                <a href="">booth samiti report</a>
+                              </li>
+                              <li>
+                                <a href="">shakti kendra report</a>
+                              </li>
+                            </ul>
                           </li>
                           <li>
                             <a href="#">user</a>
