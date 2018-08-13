@@ -19,6 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { CommonServiceProvider } from '../providers/common-service/common-service';
 import { AddBoothProvider } from '../providers/add-booth/add-booth';
+import { ShaktiKendraListPage } from './../pages/shakti-kendra-list/shakti-kendra-list';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AddBoothProvider } from '../providers/add-booth/add-booth';
     LoginPage,
     DashboardListPage,
     BoothListPage,
-    AddBoothPage
+    AddBoothPage,
+    ShaktiKendraListPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { AddBoothProvider } from '../providers/add-booth/add-booth';
     LoginPage,
     DashboardListPage,
     BoothListPage,
-    AddBoothPage
+    AddBoothPage,
+    ShaktiKendraListPage
   ],
   providers: [
     StatusBar,

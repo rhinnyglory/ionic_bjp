@@ -3,7 +3,7 @@ export interface Booths {
     district: District;
     assembly: Assembly;
     mandala: Mandala;
-    boothNumber: number;
+    boothNumber: Booth;
     fullName: string;
     mobile: string;
     membershipNumber: number;
@@ -21,7 +21,7 @@ export interface Booths {
     education: number;
     profession: string;
     assemblyConstituency: string;
-    parentBooth: string;
+    parentBooth: Booth;
 }
 
 export interface State {
@@ -44,6 +44,12 @@ export interface Assembly {
 }
 
 export interface Mandala {
+    code: string;
+    id: number;
+    name: string;
+}
+
+export interface Booth {
     code: string;
     id: number;
     name: string;

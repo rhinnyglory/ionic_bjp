@@ -12,44 +12,33 @@
                 <ion-col>
                     <label for="">state</label>
                     <ion-select [(ngModel)]="boothData.state" interface="popover">
-                        <ion-option *ngFor="let state of states" (ionSelect)="getDistricts(state)" [value]="state">{{state.name}}</ion-option>
+                        <ion-option *ngFor="let state of states" (ionSelect)="getDistricts()" [value]="state.id">{{state.name}}</ion-option>
                       </ion-select>
-                    <!-- <ion-select [(ngModel)]="state" interface="popover">
-                      <ion-option value="a">Gujarat</ion-option>
-                      <ion-option value="b">Maharastra</ion-option>
-                      <ion-option value="c">Rajashthan</ion-option>
-                    </ion-select> -->
                 </ion-col>
                 <ion-col>
                     <label for="">District</label>
                     <ion-select [(ngModel)]="boothData.district" interface="popover">
-                      <ion-option *ngFor="let dis of districts" value="{{dis.id}}">{{dis.name}}</ion-option>
+                      <ion-option *ngFor="let dis of districts" (ionSelect)="getAssemblies()" [value]="dis.id">{{dis.name}}</ion-option>
                     </ion-select>
                   </ion-col>
               <ion-col>
-                <label for="">assembly</label>
-                <ion-select [(ngModel)]="assembly" interface="popover">
-                  <ion-option value="a">Gujarat</ion-option>
-                  <ion-option value="b">Maharastra</ion-option>
-                  <ion-option value="c">Rajashthan</ion-option>
+                <label for="">Assembly</label>
+                <ion-select [(ngModel)]="boothData.assembly" interface="popover">
+                    <ion-option *ngFor="let assembly of assemblies" (ionSelect)="getMandalas()" [value]="assembly.id">{{assembly.name}}</ion-option>
                 </ion-select>
             </ion-col>
             <ion-col>
-                <label for="">mandala</label>
-                <ion-select [(ngModel)]="mandala" interface="popover">
-                  <ion-option value="a">Gujarat</ion-option>
-                  <ion-option value="b">Maharastra</ion-option>
-                  <ion-option value="c">Rajashthan</ion-option>
+                <label for="">Mandala</label>
+                <ion-select [(ngModel)]="boothData.mandala" interface="popover">
+                    <ion-option *ngFor="let mandal of mandals" (ionSelect)="getBooths()" [value]="mandal.id">{{mandal.name}}</ion-option>
                 </ion-select>
             </ion-col>
               </ion-row>
               <ion-row>
                   <ion-col col-3>
-                      <label for="">booth number</label>
-                      <ion-select [(ngModel)]="booth" interface="popover">
-                        <ion-option value="a">Gujarat</ion-option>
-                        <ion-option value="b">Maharastra</ion-option>
-                        <ion-option value="c">Rajashthan</ion-option>
+                      <label for="">Booth number</label>
+                      <ion-select [(ngModel)]="boothData.boothNumber" interface="popover">
+                        <ion-option *ngFor="let booth of boothNumbers" [value]="booth.id">{{booth.boothNo}}</ion-option>
                       </ion-select>
                   </ion-col>
                 </ion-row>
@@ -62,21 +51,21 @@
               <ion-row>
                 <ion-col>
                     <label for="">full name</label>
-                    <ion-input [(ngModel)]="name" placeholder="" type="text"></ion-input>
+                    <ion-input [(ngModel)]="boothData.fullName" placeholder="" type="text"></ion-input>
                 </ion-col>
                 <ion-col>
                     <label for="">mobile number</label>
-                    <ion-input [(ngModel)]="mobile" placeholder="" type="text"></ion-input>
+                    <ion-input [(ngModel)]="boothData.mobile" placeholder="" type="text"></ion-input>
                 </ion-col>
                 <ion-col>
                     <label for="">membership number</label>
-                    <ion-input [(ngModel)]="member" placeholder="" type="text"></ion-input>
+                    <ion-input [(ngModel)]="boothData.membershipNumber" placeholder="" type="text"></ion-input>
                 </ion-col>
                 <ion-col>
                     <label for="">gender</label>
-                    <ion-select [(ngModel)]="gender" interface="popover">
-                      <ion-option value="a">male</ion-option>
-                      <ion-option value="b">female</ion-option>
+                    <ion-select [(ngModel)]="boothData.gender" interface="popover">
+                      <ion-option value="male">male</ion-option>
+                      <ion-option value="female">female</ion-option>
                     </ion-select>
                 </ion-col>
               </ion-row>
@@ -84,22 +73,22 @@
               <ion-row>
                   <ion-col>
                       <label for="">e-mail id</label>
-                      <ion-input [(ngModel)]="email" placeholder="" type="text"></ion-input>
+                      <ion-input [(ngModel)]="boothData.email" placeholder="" type="text"></ion-input>
                   </ion-col>
                   <ion-col>
                       <label for="">epic number</label>
-                      <ion-input [(ngModel)]="u" placeholder="" type="text"></ion-input>
+                      <ion-input [(ngModel)]="boothData.epicNumber" placeholder="" type="text"></ion-input>
                   </ion-col>
                   <ion-col>
                       <label for="">my responsibility</label>
-                      <ion-select [(ngModel)]="res" interface="popover">
+                      <ion-select [(ngModel)]="boothData.myResponsibility" interface="popover">
                         <ion-option value="a">1</ion-option>
                         <ion-option value="b">2</ion-option>
                       </ion-select>
                   </ion-col>
                   <ion-col>
                       <label for="">incharge</label>
-                      <ion-select [(ngModel)]="incharge" interface="popover">
+                      <ion-select [(ngModel)]="boothData.incharge" interface="popover">
                         <ion-option value="a">1</ion-option>
                         <ion-option value="b">2</ion-option>
                       </ion-select>
@@ -109,18 +98,18 @@
                 <ion-row>
                     <ion-col col-3>
                         <label for="">bike status</label>
-                        <ion-select [(ngModel)]="status" interface="popover">
+                        <ion-select [(ngModel)]="boothData.bikeStatus" interface="popover">
                             <ion-option value="a">1</ion-option>
                             <ion-option value="b">2</ion-option>
                           </ion-select>
                     </ion-col>
                     <ion-col col-6>
                         <label for="">address</label>
-                        <ion-input [(ngModel)]="u" placeholder="" type="text"></ion-input>
+                        <ion-input [(ngModel)]="boothData.address" placeholder="" type="text"></ion-input>
                     </ion-col>
                     <ion-col col-3>
                         <label for="">pincode</label>
-                        <ion-input [(ngModel)]="pincode" placeholder="" type="text"></ion-input>
+                        <ion-input [(ngModel)]="boothData.pincode" placeholder="" type="text"></ion-input>
                     </ion-col>
                   </ion-row>
               
@@ -133,7 +122,7 @@
               <ion-row>
                 <ion-col>
                     <label for="">category</label>
-                    <ion-select [(ngModel)]="category" interface="popover">
+                    <ion-select [(ngModel)]="boothData.category" interface="popover">
                       <ion-option value="a">1</ion-option>
                       <ion-option value="b">3</ion-option>
                       <ion-option value="c">2</ion-option>
@@ -141,15 +130,15 @@
                 </ion-col>
                 <ion-col>
                     <label for="">caste</label>
-                    <ion-input [(ngModel)]="caste" placeholder="" type="text"></ion-input>
+                    <ion-input [(ngModel)]="boothData.caste" placeholder="" type="text"></ion-input>
                   </ion-col>
               <ion-col>
                   <label for="">whatsapp number</label>
-                  <ion-input [(ngModel)]="wsup" placeholder="" type="text"></ion-input>
+                  <ion-input [(ngModel)]="boothData.whatsAppNumber" placeholder="" type="text"></ion-input>
                 </ion-col>
             <ion-col>
                 <label for="">education</label>
-                <ion-select [(ngModel)]="education" interface="popover">
+                <ion-select [(ngModel)]="boothData.education" interface="popover">
                   <ion-option value="a">1</ion-option>
                   <ion-option value="b">2</ion-option>
                   <ion-option value="c">3</ion-option>
@@ -159,7 +148,7 @@
               <ion-row>
                   <ion-col col-3>
                       <label for="">profession</label>
-                      <ion-select [(ngModel)]="profession" interface="popover">
+                      <ion-select [(ngModel)]="boothData.profession" interface="popover">
                         <ion-option value="a">1</ion-option>
                         <ion-option value="b">2</ion-option>
                         <ion-option value="c">3</ion-option>
@@ -175,12 +164,12 @@
               <ion-row>
                 <ion-col>
                     <label for="">assembly constituency</label>
-                    <ion-input [(ngModel)]="cons" placeholder="" type="text"></ion-input>
+                    <ion-input [(ngModel)]="boothData.assemblyConstituency" placeholder="" type="text"></ion-input>
                   </ion-col>
               
             <ion-col>
                 <label for="">parent booth</label>
-                <ion-select [(ngModel)]="parent" interface="popover">
+                <ion-select [(ngModel)]="boothData.parentBooth" interface="popover">
                   <ion-option value="a">1</ion-option>
                   <ion-option value="b">2</ion-option>
                   <ion-option value="c">3</ion-option>
@@ -191,7 +180,7 @@
        </div>
 
        <div class="btn-group">
-          <button ion-button class="bjp-btn orange-btn" (click)="view()">save</button>
+          <button ion-button class="bjp-btn orange-btn" (click)="saveBooth()">save</button>
           <button ion-button class="bjp-btn grey-btn" (click)="view()">close</button>
        </div>
     </div>

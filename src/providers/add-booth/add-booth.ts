@@ -21,8 +21,20 @@ export class AddBoothProvider {
     return this.httpcaller.httpcall(ConstantApi.states, 'get', {});
   }
 
-  getDistricts(StateId: number){
+  getDistricts(StateId){
     return this.httpcaller.httpcall(ConstantApi.districts + '/' + StateId, 'get', {});
+  }
+
+  getAssemblies(DistrictId){
+    return this.httpcaller.httpcall(ConstantApi.assemblies + '/' + DistrictId, 'get', {});
+  }
+
+  getMandals(AssemblyId){
+    return this.httpcaller.httpcall(ConstantApi.mandalas + '/' + AssemblyId, 'get', {});
+  }
+
+  getBoothNumbers(MandalId){
+    return this.httpcaller.httpcall(ConstantApi.booths + '/' + MandalId, 'get', {});
   }
 
 }
