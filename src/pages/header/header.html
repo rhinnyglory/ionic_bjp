@@ -8,13 +8,15 @@
             <ion-grid>
                 <ion-row>
                   <ion-col col-4>
+                    <a href="javascript:void(0)" (click)="viewDashboard()">
                       <img src="assets/imgs/logo-head.png" />
+                    </a>
                   </ion-col>
                   <ion-col col-8>
                       <div class="nav">
                         <ul>
                           <li>
-                            <a href="#">dashboard</a>
+                            <a href="javascript:void(0)" (click)="viewDashboard()">dashboard</a>
                           </li>
                           <li>
                             <a href="#" (click)="view()">booth committee</a>
@@ -23,21 +25,32 @@
                             <a href="javascript:void(0)" (click)="viewSK()">shakti kendra</a>
                           </li>
                           <li class="has-submenu" [ngClass]="{'active': isActive}" (click)="isActive = !isActive">
-                            <a href="#">reports</a>
+                            <a href="#">
+                              reports
+                              <i class="arrow"></i>
+                            </a>
                             <ul class="sub-nav">
                               <li>
-                                <a href="">booth samiti report</a>
+                                <a href="javascript:void(0)" (click)="viewBSReport()">booth samiti report</a>
                               </li>
                               <li>
-                                <a href="">shakti kendra report</a>
+                                <a href="javascript:void(0)" (click)="viewSKReport()">shakti kendra report</a>
                               </li>
                             </ul>
                           </li>
-                          <li>
-                            <a href="#">user</a>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)" (click)="logout()">Logout</a>
+                          <li class="has-submenu" [ngClass]="{'active': isUser}" (click)="isUser = !isUser">
+                            <a href="#">
+                              user
+                              <i class="arrow down"></i>
+                            </a>
+                            <ul class="sub-nav">
+                                <li>
+                                  <a href="">my profile</a>
+                                </li>
+                                <li>
+                                  <a href="javascript:void(0)" (click)="logout()">Logout</a>
+                                </li>
+                              </ul>
                           </li>
                         </ul>
                       </div>

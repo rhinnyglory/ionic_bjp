@@ -176,6 +176,9 @@ page-home{
                 li{
                     a{
                         color: #fff;
+                        .arrow{
+                            border-color: #fff;
+                        }
                     }
                 }
             }
@@ -231,53 +234,6 @@ page-dashboard-list{
             margin-bottom: 0px !important;
             border-bottom: none;
         }
-        ion-toolbar{
-            padding: 0px !important;
-            .toolbar-background-md{
-                background: transparent;
-            }
-            ion-segment{
-                float: left;
-                width: 100%;
-                display: block;
-                ion-segment-button{
-                    width: 200px !important;
-                    float: left;
-                    font-size: 15px !important;
-                    text-transform: capitalize !important;
-                    border-bottom: none !important;
-                    color: rgba(0,0,0,0.6) !important;
-                    &.segment-activated{
-                        color: #f6821f !important;
-                        border: 1px solid #ccc !important;
-                        border-bottom: none !important;
-                        border-top-left-radius: 5px;
-                        border-top-right-radius: 5px;
-                        position: relative;
-                        &:after{
-                            content: '';
-                            position: absolute;
-                            height: 1px;
-                            width: 200px;
-                            background: #fff;
-                            bottom: 1px;
-                            left: 0px;
-                            z-index: 99;
-                        }
-                    }
-                }
-                &:after{
-                    content: '';
-                    position: absolute;
-                    left: 0px;
-                    bottom: -10px;
-                    width: 100%;
-                    height: 18px;
-                    border-top: 1px solid #ccc;
-                    background: #fff;
-                }
-            }
-        }
     }
 }
 page-booth-list, page-shakti-kendra-list{
@@ -318,6 +274,106 @@ page-add-sk{
         font-size: 16px;
         min-width: 120px;
         border-radius: 2px;
+    }
+}
+
+page-booth-samiti-report, page-shakti-kendra-report{
+    ion-content{
+        .page-title{
+            padding: 15px 0px;
+            padding-bottom: 0px;
+            margin-bottom: 0px !important;
+            border-bottom: none;
+        }
+        .list-cmt{
+            .list-single{
+                ul{
+                    li{
+                        width: 20%;
+                    }
+                }
+            }
+            &.general-report{
+                .list-single{
+                    ul{
+                        li{
+                            width: 12.5%;
+                        }
+                    }
+                }
+            }
+            &.general-report-full{
+                .list-single{
+                    ul{
+                        li{
+                            width: 16.5%;
+                            &:nth-child(1n+7){
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .seg-tabs {
+        ion-toolbar{
+            ion-segment{
+                ion-segment-button{
+                    width: 150px !important;
+                }
+            }
+        }
+    }
+}
+
+.seg-tabs{
+    ion-toolbar{
+        padding: 0px !important;
+        .toolbar-background-md{
+            background: transparent;
+        }
+        ion-segment{
+            float: left;
+            width: 100%;
+            display: block;
+            ion-segment-button{
+                width: 200px !important;
+                float: left;
+                font-size: 15px !important;
+                text-transform: capitalize !important;
+                border-bottom: none !important;
+                color: rgba(0,0,0,0.6) !important;
+                &.segment-activated{
+                    color: #f6821f !important;
+                    border: 1px solid #ccc !important;
+                    border-bottom: none !important;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    position: relative;
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        height: 1px;
+                        width: 200px;
+                        background: #fff;
+                        bottom: 1px;
+                        left: 0px;
+                        z-index: 99;
+                    }
+                }
+            }
+            &:after{
+                content: '';
+                position: absolute;
+                left: 0px;
+                bottom: -10px;
+                width: 100%;
+                height: 18px;
+                border-top: 1px solid #ccc;
+                background: #fff;
+            }
+        }
     }
 }
 .booth-list{
@@ -562,13 +618,29 @@ ion-header{
                             left: 0;;
                         }
                     }
+                    .arrow{
+                        border: solid #000;
+                        border-width: 0 2px 2px 0;
+                        display: inline-block;
+                        padding: 3px;
+                        vertical-align: middle;
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                        position: relative;
+                        top: -3px;
+                        right: -2px;
+                    }
                 }
                 &:last-child{
-                    padding-right: 0px;
+                    .sub-nav{
+                        right: 0px;
+                        left: auto;
+                        width: 150px;
+                    }
                 }
                 .sub-nav{
                     position: absolute;
-                    left: 0px;
+                    left: 15px;
                     top: 47px;
                     width: 200px;
                     text-align: left;
@@ -623,7 +695,7 @@ ion-menu{
     }
 }
 ion-content{
-    margin-top: 84px;
+    margin-top: 75px;
     .fixed-content, .scroll-content{
         margin-top: 0px !important;
     }

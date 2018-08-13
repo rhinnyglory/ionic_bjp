@@ -1,25 +1,4 @@
 <page-header></page-header>
-
-<!-- <ion-content padding>
-  <div class="container">
-      tab starts
-      <button ion-button>Assembly Wise Dashboard</button> <button ion-button>Parliament Wise Dashboard</button>
-      
-     <ion-tabs class = "tabs-icon-only">
-        
-           <ion-tab title = "Home" icon-on = "ion-ios-filing" 
-              icon-off = "ion-ios-filing-outline"></ion-tab>
-        
-           <ion-tab title = "About" icon-on = "ion-ios-home" 
-              icon-off = "ion-ios-home-outline"></ion-tab>
-        
-           <ion-tab title = "Settings" icon-on = "ion-ios-star" 
-              icon-off = "ion-ios-star-outline"></ion-tab>
-        
-     </ion-tabs>
-  </div>
-</ion-content> -->
-
   
   <ion-content>
     <div class="container">
@@ -27,7 +6,7 @@
             <ion-row class="page-title">
               <ion-col>
                 <div>
-                  <h2>booth committee</h2>
+                  <h2>booth samiti report</h2>
                 </div>
               </ion-col>
               <div class="text-right">
@@ -41,17 +20,20 @@
       <div class="seg-tabs">
           <ion-toolbar no-border-top>
             <ion-segment [(ngModel)]="pet">
-              <ion-segment-button value="puppies" activated>
-                Assembly Wise Dashboard
+              <ion-segment-button value="pending" activated>
+                pending report
               </ion-segment-button>
-              <ion-segment-button value="kittens">
-                District Wise Dashboard
+              <ion-segment-button value="progress">
+                  progress report
+              </ion-segment-button>
+              <ion-segment-button value="general">
+                  general report
               </ion-segment-button>
             </ion-segment>
           </ion-toolbar>
         </div>
     <div [ngSwitch]="pet">
-      <ion-list *ngSwitchCase="'puppies'">
+      <ion-list *ngSwitchCase="'pending'">
           <div class="list-cmt">
               <div class="list-single">
                   <ul>
@@ -64,55 +46,24 @@
                         <p>11</p>
                     </li>
                     <li>
-                        <label>Booths in AC</label>
+                        <label>total Booths in AC</label>
                         <p>500</p>
                     </li>
                     <li>
-                        <label>Samiti Entry in Progress</label>
-                        <p>500</p>
+                        <label>total pending booths</label>
+                        <p>4</p>
                     </li>
                     <li>
-                        <label>Samiti Entry in Completed</label>
-                        <p>00</p>
-                    </li>
-                    <li>
-                        <label>Samiti Entry Pending</label>
-                        <p>00</p>
+                        <label>pending booth</label>
+                        <p>1,2,3,4</p>
                     </li>
                   </ul>
               </div>
-              <div class="list-single">
-                  <ul>
-                    <li>
-                        <label>AC Name</label>
-                        <p>Aurangabad West</p>
-                    </li>
-                    <li>
-                        <label>AC Number</label>
-                        <p>11</p>
-                    </li>
-                    <li>
-                        <label>Booths in AC</label>
-                        <p>500</p>
-                    </li>
-                    <li>
-                        <label>Samiti Entry in Progress</label>
-                        <p>500</p>
-                    </li>
-                    <li>
-                        <label>Samiti Entry in Completed</label>
-                        <p>00</p>
-                    </li>
-                    <li>
-                        <label>Samiti Entry Pending</label>
-                        <p>00</p>
-                    </li>
-                  </ul>
-              </div>
+              
           </div>
       </ion-list>
   
-      <ion-list *ngSwitchCase="'kittens'">
+      <ion-list *ngSwitchCase="'progress'">
             <div class="list-cmt district-wise">
                 <div class="list-single">
                     <ul>
@@ -140,7 +91,50 @@
                 </div>
             </div>
       </ion-list>
+
+      <ion-list *ngSwitchCase="'general'">
+          <div class="list-cmt general-report">
+              <div class="list-single">
+                  <ul>
+                    <li>
+                        <label>state</label>
+                        <p>maharashtra</p>
+                    </li>
+                    <li>
+                        <label>district</label>
+                        <p>Aurangabad</p>
+                    </li>
+                    <li>
+                        <label>Assembly</label>
+                        <p>111 - gangapur</p>
+                    </li>
+                    <li>
+                        <label>booth</label>
+                        <p>07</p>
+                    </li>
+                    <li>
+                        <label>mandala</label>
+                        <p>Aurangabad</p>
+                    </li>
+                    <li>
+                        <label>responsibility</label>
+                        <p>booth prabhari</p>
+                    </li>
+                    <li>
+                        <label>name</label>
+                        <p>kala kendre</p>
+                    </li>
+                    <li>
+                        <label>mobile number</label>
+                        <p>9876543210</p>
+                    </li>
+                  </ul>
+              </div>
+          </div>
+    </ion-list>
   
     </div>
   </div>
   </ion-content>
+
+  <page-footer></page-footer>

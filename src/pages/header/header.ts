@@ -5,6 +5,9 @@ import { BoothListPage } from './../booth-list/booth-list';
 import { ShaktiKendraListPage } from './../shakti-kendra-list/shakti-kendra-list';
 import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
 import { LoginPage } from './../../pages/login/login';
+import { HomePage } from './../../pages/home/home';
+import { BoothSamitiReportPage } from '../../pages/booth-samiti-report/booth-samiti-report';
+import { ShaktiKendraReportPage } from '../../pages/shakti-kendra-report/shakti-kendra-report';
 
 /**
  * Generated class for the HeaderPage page.
@@ -29,12 +32,22 @@ export class HeaderPage {
 
   view(){
     this.navCtrl.push(BoothListPage);
-    // alert("called")
+  }
+
+  viewDashboard(){
+    this.navCtrl.push(HomePage);
   }
 
   viewSK(){
     this.navCtrl.push(ShaktiKendraListPage);
-    // alert("called")
+  }
+
+  viewBSReport(){
+    this.navCtrl.push(BoothSamitiReportPage);
+  }
+
+  viewSKReport(){
+    this.navCtrl.push(ShaktiKendraReportPage);
   }
 
   logout(){

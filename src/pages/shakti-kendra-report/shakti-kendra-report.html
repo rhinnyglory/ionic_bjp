@@ -1,0 +1,112 @@
+<page-header></page-header>
+  
+  <ion-content>
+    <div class="container">
+        <ion-grid>
+            <ion-row class="page-title">
+              <ion-col>
+                <div>
+                  <h2>shakti kendra report</h2>
+                </div>
+              </ion-col>
+              <div class="text-right">
+                  <button ion-button class="bjp-btn grey-btn">
+                    <img src="../../assets/imgs/filter-icon.svg" alt="">
+                    Filter
+                  </button>
+                </div>
+            </ion-row>
+          </ion-grid>
+      <div class="seg-tabs">
+          <ion-toolbar no-border-top>
+            <ion-segment [(ngModel)]="pet">
+              <ion-segment-button value="pending" activated>
+                pending report
+              </ion-segment-button>
+              <ion-segment-button value="general">
+                  general report
+              </ion-segment-button>
+            </ion-segment>
+          </ion-toolbar>
+        </div>
+    <div [ngSwitch]="pet">
+      <ion-list *ngSwitchCase="'pending'">
+          <div class="list-cmt">
+              <div class="list-single">
+                  <ul>
+                    <li>
+                        <label>AC Name</label>
+                        <p>Aurangabad West</p>
+                    </li>
+                    <li>
+                        <label>AC Number</label>
+                        <p>11</p>
+                    </li>
+                    <li>
+                        <label>total Booths in AC</label>
+                        <p>500</p>
+                    </li>
+                    <li>
+                        <label>total pending booths</label>
+                        <p>4</p>
+                    </li>
+                    <li>
+                        <label>pending booth</label>
+                        <p>1,2,3,4</p>
+                    </li>
+                  </ul>
+              </div>
+              
+          </div>
+      </ion-list>
+  
+      <ion-list *ngSwitchCase="'general'">
+          <div class="list-cmt general-report-full">
+              <div class="list-single">
+                  <ul>
+                    <li>
+                        <label>state</label>
+                        <p>maharashtra</p>
+                    </li>
+                    <li>
+                        <label>district</label>
+                        <p>Aurangabad</p>
+                    </li>
+                    <li>
+                        <label>Assembly</label>
+                        <p>111 - gangapur</p>
+                    </li>
+                    <li>
+                        <label>TOtal booths in AC</label>
+                        <p>800</p>
+                    </li>
+                    <li>
+                        <label>booth booths in AC</label>
+                        <p>6, 12, 18, 24, 30</p>
+                    </li>
+                    <li>
+                        <label>total booths in SK</label>
+                        <p>04</p>
+                    </li>
+                    <li>
+                        <label>shakti kendra</label>
+                        <p>gangapur SK 1</p>
+                    </li>
+                    <li>
+                        <label>pramukh name</label>
+                        <p>milind gokul</p>
+                    </li>
+                    <li>
+                        <label>mobile number</label>
+                        <p>9876543210</p>
+                    </li>
+                  </ul>
+              </div>
+          </div>
+    </ion-list>
+  
+    </div>
+  </div>
+  </ion-content>
+
+  <page-footer></page-footer>

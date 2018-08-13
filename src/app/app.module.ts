@@ -17,6 +17,9 @@ import { AddBoothPage } from './../pages/add-booth/add-booth';
 import { ShaktiKendraListPage } from './../pages/shakti-kendra-list/shakti-kendra-list';
 import { AddSkPage } from './../pages/add-sk/add-sk';
 
+import { BoothSamitiReportPage } from './../pages/booth-samiti-report/booth-samiti-report';
+import { ShaktiKendraReportPage } from './../pages/shakti-kendra-report/shakti-kendra-report';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
@@ -35,7 +38,9 @@ import { AddBoothProvider } from '../providers/add-booth/add-booth';
     BoothListPage,
     AddBoothPage,
     ShaktiKendraListPage,
-    AddSkPage
+    AddSkPage,
+    BoothSamitiReportPage,
+    ShaktiKendraReportPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,9 @@ import { AddBoothProvider } from '../providers/add-booth/add-booth';
     BoothListPage,
     AddBoothPage,
     ShaktiKendraListPage,
-    AddSkPage
+    AddSkPage,
+    BoothSamitiReportPage,
+    ShaktiKendraReportPage
   ],
   providers: [
     StatusBar,
