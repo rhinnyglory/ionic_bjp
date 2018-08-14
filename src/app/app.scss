@@ -296,6 +296,9 @@ page-booth-list, page-shakti-kendra-list{
             padding: 15px 0px;
         }
     }
+    .filter-content{
+        border-top: none;
+    }
 }
 
 page-add-booth{
@@ -427,6 +430,12 @@ page-booth-samiti-report, page-shakti-kendra-report{
         }
     }
 }
+.booth-content{
+    margin-top: 15px;
+}
+.booth-form-content{
+    margin-top: 15px;
+}
 .booth-list{
     display: flex;
     border: 1px solid #e1e1e1;
@@ -473,33 +482,72 @@ page-booth-samiti-report, page-shakti-kendra-report{
             text-transform: initial;
         }
     }
-    ion-select{
-        max-width: 100%;
-        border: 1px solid #b7b7b7;
-        border-radius: 2px;
-        padding: 9px 8px 9px 10px;
-    }
-    ion-input{
-        input{
-            margin: 0px;
-            border: 1px solid #b7b7b7;
-            padding: 10px 10px;
-            width: 100%;
-        }
-    }
     .grid{
         padding: 0px;
         .row{
             margin: 0 -15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             .col{
                 padding: 5px 15px;
             }
         }
     }
 }
+ion-select{
+    max-width: 100%;
+    border: 1px solid #b7b7b7;
+    border-radius: 2px;
+    padding: 9px 8px 9px 10px;
+}
+ion-input{
+    input{
+        margin: 0px;
+        border: 1px solid #b7b7b7;
+        padding: 10px 10px;
+        width: 100%;
+    }
+}
 .text-right{
     text-align: right;
+}
+.report-filter{
+    text-align: right;
+    ul{
+        margin: 0px;
+        padding: 0px;
+        li{
+            display: inline-block;
+            padding-right: 5px;
+            position: relative;
+            min-width: 100px;
+            height: 28px;
+            &:last-child{
+                padding-right: 0px;
+            }
+            ion-select{
+                max-width: 200px;
+                width: 130px;
+                padding: 8px 8px 8px 16px;
+                position: relative;
+                border-radius: 5px;
+                &[ng-reflect-model]{
+                    top: -7px;
+                }
+            }
+            label{
+                position: absolute;
+                top: 10px;
+                right: 5px;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            .grey-btn{
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+        }
+    }
 }
 .button{
     margin: 0px;
@@ -543,9 +591,17 @@ page-booth-samiti-report, page-shakti-kendra-report{
         background: rgba(246, 130, 31, 0.8) !important;
     }
 }
+.title-grid{
+    padding-left: 0px;
+    padding-right: 0px;
+    .col{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
 .page-title{
-    padding: 30px 0px;
-    margin-bottom: 30px !important;
+    padding: 20px 0px;
+    // margin-bottom: 30px !important;
     border-bottom: 1px solid #bac3ca;
     h2{
         font-size: 22px;
@@ -755,11 +811,31 @@ ion-content{
     }
 }
 
+.filter-content{
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    .booth-form{
+        border-bottom: none;
+        margin-bottom: 0px;
+    }
+    .btn-group{
+        padding-bottom: 15px;
+        .bjp-btn {
+            width: 120px;
+            font-size: 16px;
+            padding: 18px 15px;
+            border-radius: 2px;
+        }
+    }
+}
+
 ion-footer{
     text-align: center;
     padding: 20px 0px;
     background: #ebebeb;
-    border-top: 1px solid rgba(0,0,0,0.4);
+    border-top: 1px solid rgba(0,0,0,0.1);
     ul{
         margin: 0px;
         li{

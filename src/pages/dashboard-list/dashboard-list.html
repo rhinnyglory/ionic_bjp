@@ -1,43 +1,53 @@
 <page-header></page-header>
-
-<!-- <ion-content padding>
-  <div class="container">
-      tab starts
-      <button ion-button>Assembly Wise Dashboard</button> <button ion-button>Parliament Wise Dashboard</button>
-      
-     <ion-tabs class = "tabs-icon-only">
-        
-           <ion-tab title = "Home" icon-on = "ion-ios-filing" 
-              icon-off = "ion-ios-filing-outline"></ion-tab>
-        
-           <ion-tab title = "About" icon-on = "ion-ios-home" 
-              icon-off = "ion-ios-home-outline"></ion-tab>
-        
-           <ion-tab title = "Settings" icon-on = "ion-ios-star" 
-              icon-off = "ion-ios-star-outline"></ion-tab>
-        
-     </ion-tabs>
-  </div>
-</ion-content> -->
-
-  
   <ion-content>
     <div class="container">
-        <ion-grid>
-            <ion-row class="page-title">
-              <ion-col>
-                <div>
-                  <h2>booth committee</h2>
-                </div>
-              </ion-col>
-              <div class="text-right">
-                  <button ion-button class="bjp-btn grey-btn">
-                    <img src="assets/imgs/filter-icon.svg" alt="">
-                    Filter
-                  </button>
-                </div>
-            </ion-row>
-          </ion-grid>
+    <ion-grid class="title-grid">
+        <ion-row class="page-title">
+            <ion-col>
+            <div>
+                <h2>booth committee</h2>
+            </div>
+            </ion-col>
+            <div class="text-right" (click)="filterForm = !filterForm">
+                <button ion-button class="bjp-btn grey-btn">
+                <img src="assets/imgs/filter-icon.svg" alt="">
+                Filter
+                </button>
+            </div>
+        </ion-row>
+    </ion-grid>
+    <div class="filter-content" *ngIf="filterForm">
+        <div class="booth-form">
+            <h3 class="sub-title">Filters</h3>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-3>
+                        <label for="">state</label>
+                        <ion-select [(ngModel)]="state" interface="popover">
+                            <ion-option [value]="1">s</ion-option>
+                        </ion-select>
+                    </ion-col>
+                    <ion-col col-3>
+                        <label for="">district</label>
+                        <ion-select [(ngModel)]="district" interface="popover">
+                            <ion-option [value]="1">s</ion-option>
+                        </ion-select>
+                    </ion-col>
+                    <ion-col col-3>
+                        <label for="">assembly</label>
+                        <ion-select [(ngModel)]="assembly" interface="popover">
+                            <ion-option [value]="1">s</ion-option>
+                        </ion-select>
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+        </div>
+        <div class="btn-group">
+            <button ion-button class="bjp-btn orange-btn" (click)="filterForm = !filterForm">filter</button>
+            <button ion-button class="bjp-btn grey-btn" (click)="filterForm = !filterForm">close</button>
+        </div>
+    </div>
       <div class="seg-tabs">
           <ion-toolbar no-border-top>
             <ion-segment [(ngModel)]="pet">
@@ -144,3 +154,4 @@
     </div>
   </div>
   </ion-content>
+  <page-footer></page-footer>

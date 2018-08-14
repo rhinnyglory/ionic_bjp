@@ -8,7 +8,7 @@
 
 <ion-content padding>
   <div class="container">
-      <ion-grid>
+      <ion-grid class="title-grid">
         <ion-row class="page-title">
           <ion-col>
             <div>
@@ -16,7 +16,7 @@
             </div>
           </ion-col>
           <div class="text-right">
-              <button ion-button class="bjp-btn grey-btn">
+              <button ion-button class="bjp-btn grey-btn" (click)="filterForm = !filterForm">
                 <img src="assets/imgs/filter-icon.svg" alt="">
                 Filter
               </button>
@@ -24,6 +24,80 @@
             </div>
         </ion-row>
       </ion-grid>
+
+      <div class="filter-content" *ngIf="filterForm">
+            <div class="booth-form">
+                <h3 class="sub-title">Filters</h3>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-3>
+                            <label for="">state</label>
+                            <ion-select [(ngModel)]="state" interface="popover">
+                                <ion-option [value]="1">s</ion-option>
+                            </ion-select>
+                        </ion-col>
+                        <ion-col col-3>
+                            <label for="">district</label>
+                            <ion-select [(ngModel)]="district" interface="popover">
+                                <ion-option [value]="1">s</ion-option>
+                            </ion-select>
+                        </ion-col>
+                        <ion-col col-3>
+                            <label for="">assembly</label>
+                            <ion-select [(ngModel)]="assembly" interface="popover">
+                                <ion-option [value]="1">s</ion-option>
+                            </ion-select>
+                        </ion-col>
+                        <ion-col col-3>
+                            <label for="">mandala</label>
+                            <ion-select [(ngModel)]="mandala" interface="popover">
+                                <ion-option [value]="1">s</ion-option>
+                            </ion-select>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col col-3>
+                            <label for="">shakti kendra</label>
+                            <ion-select [(ngModel)]="sk" interface="popover">
+                                <ion-option [value]="1">s</ion-option>
+                            </ion-select>
+                        </ion-col>
+                        <ion-col col-3>
+                            <label for="">risponsibility</label>
+                            <ion-select [(ngModel)]="risponsibility" interface="popover">
+                                <ion-option [value]="1">s</ion-option>
+                            </ion-select>
+                        </ion-col>
+                        <ion-col col-3>
+                            <label for="">name</label>
+                            <ion-select [(ngModel)]="name" interface="popover">
+                                <ion-option [value]="1">s</ion-option>
+                            </ion-select>
+                        </ion-col>
+                        <ion-col col-3>
+                            <label for="">gender</label>
+                            <ion-select [(ngModel)]="gender" interface="popover">
+                                <ion-option [value]="1">s</ion-option>
+                            </ion-select>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col col-3>
+                            <label for="">mobile number</label>
+                            <ion-input [(ngModel)]="number" placeholder="mobile number" type="text"></ion-input>
+                        </ion-col>
+                    </ion-row>
+    
+                </ion-grid>
+            </div>
+            <div class="btn-group">
+                <button ion-button class="bjp-btn orange-btn" (click)="filterForm = !filterForm">filter</button>
+                <button ion-button class="bjp-btn grey-btn" (click)="filterForm = !filterForm">close</button>
+            </div>
+        </div>
+
       <div class="booth-content">
         <div class="booth-list">
           <div class="list-cmt">

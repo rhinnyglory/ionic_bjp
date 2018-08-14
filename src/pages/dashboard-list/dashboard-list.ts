@@ -24,4 +24,6 @@ export class DashboardListPage {
     console.log('ionViewDidLoad DashboardListPage');
   }
 
+  filterForm: boolean = false;
+
 }
