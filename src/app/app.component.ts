@@ -8,6 +8,8 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { BoothListPage } from '../pages/booth-list/booth-list';
 import { ShaktiKendraListPage } from '../pages/shakti-kendra-list/shakti-kendra-list';
+import { BoothSamitiReportPage } from '../pages/booth-samiti-report/booth-samiti-report';
+import { ShaktiKendraReportPage } from '../pages/shakti-kendra-report/shakti-kendra-report';
 
 @Component({
   templateUrl: 'app.html'
@@ -27,6 +29,9 @@ export class MyApp {
       { title: 'Dashboard', component: HomePage },
       { title: 'booth committee', component: BoothListPage },
       { title: 'shakti kendra', component: ShaktiKendraListPage },
+      { title: 'booth samiti report', component: BoothSamitiReportPage },
+      { title: 'shakti kendra report', component: ShaktiKendraReportPage },
+      { title: 'logout', component: LoginPage },
       // { title: 'Reports', component: ListPage },
       // { title: 'User', component: ListPage },
     ];
