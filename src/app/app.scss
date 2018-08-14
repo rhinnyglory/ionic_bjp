@@ -190,6 +190,9 @@ page-home{
             background-image: url(../assets/imgs/home-banner.jpg);
             background-size: cover;
             height: 600px;
+            &+.container{
+                position: relative;
+            }
             &>.container{
                 position: relative;
                 height: 100%;
@@ -219,6 +222,54 @@ page-home{
                 right: -15%;
                 bottom: 0px;
                 max-width: 700px;
+            }
+        }
+        .fab-list{
+            ion-fab{
+                right: 0px;
+                .orange-btn{
+                    &:hover{
+                        background: rgba(246, 130, 31, 1) !important
+                    }
+                }
+                ion-fab-list{
+                    width: 220px;
+                    -webkit-box-align: flex-end;
+                    -webkit-align-items: flex-end;
+                    -ms-flex-align: flex-end;
+                    align-items: flex-end;
+                    right: 0px;
+                    .fab-in-list{
+                        width: 100%;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 16px;
+                        background-color: #666666;
+                        text-transform: capitalize;
+                        &:last-child{
+                            width: 200px;
+                        }
+                        &:hover{
+                            opacity: 1;
+                            background: #8b8b8b;
+                        }
+                    }
+                }
+            }
+            &.active{
+                & ~ div, & ~ h3{
+                    position: relative;
+                    &:after{
+                        position: absolute;
+                        content: '';
+                        height: 100%;
+                        width: 100%;
+                        background: rgba(255,255,255,0.6);
+                        top: 0px;
+                        left: 0px;;
+                    }
+                }
             }
         }
     }
@@ -342,12 +393,12 @@ page-booth-samiti-report, page-shakti-kendra-report{
                 float: left;
                 font-size: 15px !important;
                 text-transform: capitalize !important;
-                border-bottom: none !important;
+                border: 1px solid transparent !important;
                 color: rgba(0,0,0,0.6) !important;
                 &.segment-activated{
                     color: #f6821f !important;
-                    border: 1px solid #ccc !important;
-                    border-bottom: none !important;
+                    border-color: #ccc !important;
+                    border-bottom-color: transparent !important;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
                     position: relative;
@@ -357,7 +408,7 @@ page-booth-samiti-report, page-shakti-kendra-report{
                         height: 1px;
                         width: 200px;
                         background: #fff;
-                        bottom: 1px;
+                        bottom: 0px;
                         left: 0px;
                         z-index: 99;
                     }
@@ -487,7 +538,7 @@ page-booth-samiti-report, page-shakti-kendra-report{
 }
 .orange-btn{
     background: #f6821f;
-    border: 1px solid #f6821f;
+    border: 1px solid #d26304;
     &:hover{
         background: rgba(246, 130, 31, 0.8) !important;
     }
@@ -514,6 +565,8 @@ page-booth-samiti-report, page-shakti-kendra-report{
     }
 }
 .list-cmt{
+    float: left;
+    width: 100%;
     .list-single{
         padding: 15px;
         border: 1px solid #e1e1e1;
@@ -615,7 +668,7 @@ ion-header{
                             height: 2px;
                             width: 100%;
                             background: #f6821f;
-                            bottom: 3px;
+                            bottom: 0px;
                             left: 0;;
                         }
                     }
@@ -642,7 +695,7 @@ ion-header{
                 .sub-nav{
                     position: absolute;
                     left: 15px;
-                    top: 47px;
+                    top: 50px;
                     width: 200px;
                     text-align: left;
                     margin: 0px;

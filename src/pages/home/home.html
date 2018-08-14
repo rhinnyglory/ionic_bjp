@@ -10,7 +10,17 @@
             <img src="assets/imgs/mota-bhai.png" alt="modi">
         </div>
     </div>
+
     <div class="container">
+        <div class="fab-list" [ngClass]="{'active': isActive}" (click)="isActive = !isActive">
+            <ion-fab top right edge>
+                <button ion-fab float-right class="orange-btn"><ion-icon name="add"></ion-icon></button>
+                <ion-fab-list>
+                    <a href="javascript:void(0)" ion-fab>add shakti kendra bearer</a>
+                    <a href="javascript:void(0)" ion-fab>add booth committee</a>
+                </ion-fab-list>
+            </ion-fab>
+        </div>
         <div class="page-title">
             <h2>dashboard</h2>
         </div>
