@@ -1,239 +1,272 @@
 <page-header></page-header>
 
 <ion-content padding>
-    <div class="container">
-       <div class="page-title">
-         <h2>booth committee entry form</h2>
-       </div>
-       <div class="booth-form">
-          <h3 class="sub-title">booth details</h3>
-          <ion-grid>
-              <ion-row>
-                <ion-col>
-                    <label for="">state</label>
-                    <ion-select [(ngModel)]="boothData.state" interface="popover">
-                        <ion-option *ngFor="let state of states" (ionSelect)="getDistricts()" [value]="state.id">{{state.name}}</ion-option>
-                      </ion-select>
-                </ion-col>
-                <ion-col>
-                    <label for="">District</label>
-                    <ion-select [(ngModel)]="boothData.district" interface="popover">
-                      <ion-option *ngFor="let dis of districts" (ionSelect)="getAssemblies()" [value]="dis.id">{{dis.name}}</ion-option>
-                    </ion-select>
-                  </ion-col>
-              <ion-col>
-                <label for="">Assembly</label>
-                <ion-select [(ngModel)]="boothData.assembly" interface="popover">
-                    <ion-option *ngFor="let assembly of assemblies" (ionSelect)="getMandalas()" [value]="assembly.id">{{assembly.name}}</ion-option>
-                </ion-select>
-            </ion-col>
-            <ion-col>
-                <label for="">Mandala</label>
-                <ion-select [(ngModel)]="boothData.mandala" interface="popover">
-                    <ion-option *ngFor="let mandal of mandals" (ionSelect)="getBooths()" [value]="mandal.id">{{mandal.name}}</ion-option>
-                </ion-select>
-            </ion-col>
-              </ion-row>
-              <ion-row>
-                  <ion-col col-3>
-                      <label for="">Booth Number</label>
-                      <ion-select [(ngModel)]="boothData.booth" interface="popover">
-                        <ion-option *ngFor="let boothNo of boothNumbers" [value]="boothNo.id">{{boothNo.boothNo}}</ion-option>
-                      </ion-select>
-                  </ion-col>
-                </ion-row>
-            </ion-grid>
-       </div>
+    <form ngNativeValidate name="boothForm" #boothForm="ngForm" novalidate>
+        <div class="container">
+            <div class="page-title">
+                <h2>booth committee entry form</h2>
+            </div>
+            <div class="booth-form">
+                <h3 class="sub-title">booth details</h3>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <label for="">state</label>
+                            <ion-select [(ngModel)]="boothData.state" interface="popover" name="state" #state="ngModel" required>
+                                <ion-option *ngFor="let state of states" (ionSelect)="getDistricts()" [value]="state.id">{{state.name}}</ion-option>
+                            </ion-select>
+                            <p *ngIf="state.errors && (state.dirty || state.touched)" padding>State is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">District</label>
+                            <ion-select [(ngModel)]="boothData.district" interface="popover" name="district" #district="ngModel" required>
+                                <ion-option *ngFor="let dis of districts" (ionSelect)="getAssemblies()" [value]="dis.id">{{dis.name}}</ion-option>
+                            </ion-select>
+                            <p *ngIf="district.errors && (district.dirty || district.touched)" padding>District is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">Assembly</label>
+                            <ion-select [(ngModel)]="boothData.assembly" interface="popover" name="assembly" #assembly="ngModel" required>
+                                <ion-option *ngFor="let assembly of assemblies" (ionSelect)="getMandalas()" [value]="assembly.id">{{assembly.name}}</ion-option>
+                            </ion-select>
+                            <p *ngIf="assembly.errors && (assembly.dirty || assembly.touched)" padding>Assembly is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">Mandala</label>
+                            <ion-select [(ngModel)]="boothData.mandala" interface="popover" name="mandala" #mandala="ngModel" required>
+                                <ion-option *ngFor="let mandal of mandals" (ionSelect)="getBooths()" [value]="mandal.id">{{mandal.name}}</ion-option>
+                            </ion-select>
+                            <p *ngIf="mandala.errors && (mandala.dirty || mandala.touched)" padding>Mandala is required.</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-3>
+                            <label for="">Booth Number</label>
+                            <ion-select [(ngModel)]="boothData.booth" interface="popover" name="booth" #booth="ngModel" required>
+                                <ion-option *ngFor="let boothNo of boothNumbers" [value]="boothNo.id">{{boothNo.boothNo}}</ion-option>
+                            </ion-select>
+                            <p *ngIf="booth.errors && (booth.dirty || booth.touched)" padding>Booth is required.</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
 
-       <div class="booth-form">
-          <h3 class="sub-title">basic information</h3>
-          <ion-grid>
-              <ion-row>
-                <ion-col>
-                    <label for="">full name</label>
-                    <ion-input [(ngModel)]="boothData.fullName" placeholder="" type="text"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <label for="">mobile number</label>
-                    <ion-input [(ngModel)]="boothData.mobileNumber" placeholder="" type="text"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <label for="">membership number</label>
-                    <ion-input [(ngModel)]="boothData.membershipNumber" placeholder="" type="text"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <label for="">gender</label>
-                    <ion-list radio-group [(ngModel)]="boothData.gender">
-                        <ion-item>
-                            <ion-label>Male</ion-label>
-                            <ion-radio checked="true" value="male"></ion-radio>
-                        </ion-item>
-                    
-                        <ion-item>
-                            <ion-label>Female</ion-label>
-                            <ion-radio value="female"></ion-radio>
-                        </ion-item>
-                    </ion-list>
-                    <!-- <ion-select [(ngModel)]="boothData.gender" interface="popover">
-                      <ion-option value="male">male</ion-option>
-                      <ion-option value="female">female</ion-option>
-                    </ion-select> -->
-                </ion-col>
-              </ion-row>
+            <div class="booth-form">
+                <h3 class="sub-title">basic information</h3>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <label for="name">full name</label>
+                            <ion-input placeholder="abc" [(ngModel)]="boothData.fullName" name="fullName" #fullName="ngModel" required type="text"></ion-input>
+                            <p *ngIf="fullName.errors && (fullName.dirty || fullName.touched)" padding>Name is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">mobile number</label>
+                            <ion-input [(ngModel)]="boothData.mobileNumber" placeholder="9876543210" name="mobileNumber" #mobileNumber="ngModel" required type="tel" maxlength="10"></ion-input>
+                            <p *ngIf="mobileNumber.errors && (mobileNumber.dirty || mobileNumber.touched)" padding>Mobile Number is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">membership number</label>
+                            <ion-input [(ngModel)]="boothData.membershipNumber" placeholder="45" name="membershipNumber" #membershipNumber="ngModel" required type="text"></ion-input>
+                            <p *ngIf="membershipNumber.errors && (membershipNumber.dirty || membershipNumber.touched)" padding>Membership Number is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">gender</label>
+                            <ion-list radio-group [(ngModel)]="boothData.gender" name="gender" #gender="ngModel" required>
+                                <ion-item>
+                                    <ion-label>Male</ion-label>
+                                    <ion-radio checked="true" value="male"></ion-radio>
+                                </ion-item>
 
-              <ion-row>
-                  <ion-col>
-                      <label for="">e-mail id</label>
-                      <ion-input [(ngModel)]="boothData.email" placeholder="" type="text"></ion-input>
-                  </ion-col>
-                  <ion-col>
-                      <label for="">epic number</label>
-                      <ion-input [(ngModel)]="boothData.epicNumber" placeholder="" type="text"></ion-input>
-                  </ion-col>
-                  <ion-col>
-                      <label for="">my responsibility</label>
-                      <ion-select [(ngModel)]="boothData.responsibility" interface="popover">
-                        <ion-option value="Booth Prabhari">Booth Prabhari</ion-option>
-                        <ion-option value="President">President</ion-option>
-                        <ion-option value="Secretary">Secretary</ion-option>
-                        <ion-option value="BLA2">BLA2</ion-option>
-                        <ion-option value="Mahila Pramukh">Mahila Pramukh</ion-option>
-                        <ion-option value="Member">Member</ion-option>
-                      </ion-select>
-                  </ion-col>
-                  <ion-col>
-                      <label for="">incharge</label>
-                      <ion-select [(ngModel)]="boothData.incharge" interface="popover">
-                        <ion-option value="WhatsApp Group">WhatsApp Group</ion-option>
-                        <ion-option value="Mann Ki Baat">Mann Ki Baat</ion-option>
-                        <ion-option value="Booth Program">Booth Program</ion-option>
-                        <ion-option value="None of the above">None of the above</ion-option>
-                      </ion-select>
-                  </ion-col>
-                </ion-row>
+                                <ion-item>
+                                    <ion-label>Female</ion-label>
+                                    <ion-radio value="female"></ion-radio>
+                                </ion-item>
+                            </ion-list>
+                            <p *ngIf="gender.errors && (gender.dirty || gender.touched)" padding>Gender is required.</p>
+                            <!-- <ion-select [(ngModel)]="boothData.gender" interface="popover">
+                        <ion-option value="male">male</ion-option>
+                        <ion-option value="female">female</ion-option>
+                        </ion-select> -->
+                        </ion-col>
+                    </ion-row>
 
-                <ion-row>
-                    <ion-col col-3>
-                        <label for="">bike status</label>
-                        <ion-list radio-group [(ngModel)]="boothData.bikeStatus">
-                            <ion-item>
-                                <ion-label>yes</ion-label>
-                                <ion-radio checked="true" value="yes"></ion-radio>
-                            </ion-item>
-                        
-                            <ion-item>
-                                <ion-label>no</ion-label>
-                                <ion-radio value="no"></ion-radio>
-                            </ion-item>
-                        </ion-list>
-                        <!-- <ion-select [(ngModel)]="boothData.bikeStatus" interface="popover">
-                            <ion-option value="a">1</ion-option>
-                            <ion-option value="b">2</ion-option>
-                          </ion-select> -->
-                    </ion-col>
-                    <ion-col col-6>
-                        <label for="">address</label>
-                        <ion-input [(ngModel)]="boothData.address" placeholder="" type="text"></ion-input>
-                    </ion-col>
-                    <ion-col col-3>
-                        <label for="">pincode</label>
-                        <ion-input [(ngModel)]="boothData.pincode" placeholder="" type="text"></ion-input>
-                    </ion-col>
-                  </ion-row>
-              
-            </ion-grid>
-       </div>
+                    <ion-row>
+                        <ion-col>
+                            <label for="">e-mail id</label>
+                            <ion-input [(ngModel)]="boothData.email" placeholder="" type="text" name="email" #email="ngModel" required></ion-input>
+                            <p *ngIf="email.errors && (email.dirty || email.touched)" padding>E-mail is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">epic number</label>
+                            <ion-input [(ngModel)]="boothData.epicNumber" placeholder="" type="text" name="epicNumber" #epicNumber="ngModel" required></ion-input>
+                            <p *ngIf="epicNumber.errors && (epicNumber.dirty || epicNumber.touched)" padding>Epic Number is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">my responsibility</label>
+                            <ion-select [(ngModel)]="boothData.responsibility" interface="popover" name="responsibility" #responsibility="ngModel" required>
+                                <ion-option value="Booth Prabhari">Booth Prabhari</ion-option>
+                                <ion-option value="President">President</ion-option>
+                                <ion-option value="Secretary">Secretary</ion-option>
+                                <ion-option value="BLA2">BLA2</ion-option>
+                                <ion-option value="Mahila Pramukh">Mahila Pramukh</ion-option>
+                                <ion-option value="Member">Member</ion-option>
+                            </ion-select>
+                            <p *ngIf="responsibility.errors && (responsibility.dirty || responsibility.touched)" padding>Responsibility is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">incharge</label>
+                            <ion-select [(ngModel)]="boothData.incharge" interface="popover" name="incharge" #incharge="ngModel" required>
+                                <ion-option value="WhatsApp Group">WhatsApp Group</ion-option>
+                                <ion-option value="Mann Ki Baat">Mann Ki Baat</ion-option>
+                                <ion-option value="Booth Program">Booth Program</ion-option>
+                                <ion-option value="None of the above">None of the above</ion-option>
+                            </ion-select>
+                            <p *ngIf="incharge.errors && (incharge.dirty || incharge.touched)" padding>In-charge is required.</p>
+                        </ion-col>
+                    </ion-row>
 
-       <div class="booth-form">
-          <h3 class="sub-title">other information</h3>
-          <ion-grid>
-              <ion-row>
-                <ion-col>
-                    <label for="">category</label>
-                    <ion-select [(ngModel)]="boothData.category" interface="popover">
-                      <ion-option value="General">General</ion-option>
-                      <ion-option value="OBC">OBC</ion-option>
-                      <ion-option value="SC">SC</ion-option>
-                      <ion-option value="ST">ST</ion-option>
-                      <ion-option value="Minority">Minority</ion-option>
-                    </ion-select>
-                </ion-col>
-                <ion-col>
-                    <label for="">caste</label>
-                    <ion-input [(ngModel)]="boothData.caste" placeholder="" type="text"></ion-input>
-                  </ion-col>
-              <ion-col>
-                  <label for="">whatsapp number</label>
-                  <ion-input [(ngModel)]="boothData.whatsappNo" placeholder="" type="text"></ion-input>
-                </ion-col>
-            <ion-col>
-                <label for="">education</label>
-                <ion-select [(ngModel)]="boothData.education" interface="popover">
-                  <ion-option value="Under Matriculation">Under Matriculation</ion-option>
-                  <ion-option value="Matriculation">Matriculation</ion-option>
-                  <ion-option value="PUC">PUC</ion-option>
-                  <ion-option value="Graduate">Graduate</ion-option>
-                  <ion-option value="Post Graduate">Post Graduate</ion-option>
-                  <ion-option value="Doctorate">Doctorate</ion-option>
-                  <ion-option value="Other">Other</ion-option>
-                  <ion-option value="No Info">No Info</ion-option>
-                </ion-select>
-            </ion-col>
-              </ion-row>
-              <ion-row>
-                  <ion-col col-3>
-                      <label for="">profession</label>
-                      <ion-select [(ngModel)]="boothData.profession" interface="popover">
-                            <ion-option value="Agriculturist">Agriculturist</ion-option>
-                            <ion-option value="Business">Business</ion-option>
-                            <ion-option value="Employee">Employee</ion-option>
-                            <ion-option value="Labor">Labor</ion-option>
-                            <ion-option value="Lawyer">Lawyer</ion-option>
-                            <ion-option value="Doctor">Doctor</ion-option>
-                            <ion-option value="Engineer">Engineer</ion-option>
-                            <ion-option value="Teacher">Teacher</ion-option>
-                            <ion-option value="House Wife">House Wife</ion-option>
-                            <ion-option value="Social Activist">Social Activist</ion-option>
-                            <ion-option value="Coolie">Coolie</ion-option>
-                            <ion-option value="Driver">Driver</ion-option>
-                            <ion-option value="Student">Student</ion-option>
-                            <ion-option value="Jobless">Jobless</ion-option>
-                            <ion-option value="Other">Other</ion-option>
-                      </ion-select>
-                  </ion-col>
-                </ion-row>
-            </ion-grid>
-       </div>
+                    <ion-row>
+                        <ion-col col-3>
+                            <label for="">bike status</label>
+                            <ion-list radio-group [(ngModel)]="boothData.bikeStatus" name="bikeStatus" #bikeStatus="ngModel" required>
+                                <ion-item>
+                                    <ion-label>yes</ion-label>
+                                    <ion-radio checked="true" value="yes"></ion-radio>
+                                </ion-item>
 
-       <div class="booth-form">
-          <h3 class="sub-title">other information</h3>
-          <ion-grid>
-              <ion-row>
-                <ion-col>
-                    <label for="">assembly constituency</label>
-                    <ion-input [(ngModel)]="boothData.assemblyConstituency" placeholder="" type="text"></ion-input>
-                  </ion-col>
-              
-            <ion-col>
-                <label for="">parent booth</label>
-                <ion-select [(ngModel)]="boothData.parentBooth" interface="popover">
-                    <ion-option *ngFor="let booth of boothNumbers" [value]="booth.id">{{booth.boothNo}}</ion-option>
-                </ion-select>
-                <!-- <ion-select [(ngModel)]="boothData.parentBooth" interface="popover">
-                  <ion-option value="a">1</ion-option>
-                  <ion-option value="b">2</ion-option>
-                  <ion-option value="c">3</ion-option>
-                </ion-select> -->
-            </ion-col>
-              </ion-row>
-            </ion-grid>
-       </div>
+                                <ion-item>
+                                    <ion-label>no</ion-label>
+                                    <ion-radio value="no"></ion-radio>
+                                </ion-item>
+                            </ion-list>
+                            <p *ngIf="bikeStatus.errors && (bikeStatus.dirty || bikeStatus.touched)" padding>Bike Status is required.</p>
+                            <!-- <ion-select [(ngModel)]="boothData.bikeStatus" interface="popover">
+                                <ion-option value="a">1</ion-option>
+                                <ion-option value="b">2</ion-option>
+                            </ion-select> -->
+                        </ion-col>
+                        <ion-col col-6>
+                            <label for="">Address</label>
+                            <ion-input [(ngModel)]="boothData.address" placeholder="d.no, abc-street, city, state" name="address" #address="ngModel" required type="text"></ion-input>
+                            <p *ngIf="address.errors && (address.dirty || address.touched)" padding>Address is required.</p>
+                        </ion-col>
+                        <ion-col col-3>
+                            <label for="">pincode</label>
+                            <ion-input [(ngModel)]="boothData.pincode" placeholder="380015" type="text" name="pincode" #pincode="ngModel" required></ion-input>
+                            <p *ngIf="pincode.errors && (pincode.dirty || pincode.touched)" padding>Pincode is required.</p>
+                        </ion-col>
+                    </ion-row>
 
-       <div class="btn-group">
-          <button ion-button class="bjp-btn orange-btn" (click)="saveBooth()">save</button>
-          <button ion-button class="bjp-btn grey-btn" (click)="view()">close</button>
-       </div>
-    </div>
+                </ion-grid>
+            </div>
+
+            <div class="booth-form">
+                <h3 class="sub-title">other information</h3>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <label for="">Category</label>
+                            <ion-select [(ngModel)]="boothData.category" interface="popover" name="category" #category="ngModel" required>
+                                <ion-option value="General">General</ion-option>
+                                <ion-option value="OBC">OBC</ion-option>
+                                <ion-option value="SC">SC</ion-option>
+                                <ion-option value="ST">ST</ion-option>
+                                <ion-option value="Minority">Minority</ion-option>
+                            </ion-select>
+                            <p *ngIf="category.errors && (category.dirty || category.touched)" padding>Category is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">Caste</label>
+                            <ion-input [(ngModel)]="boothData.caste" placeholder="" type="text" name="caste" #caste="ngModel" required></ion-input>
+                            <p *ngIf="caste.errors && (caste.dirty || caste.touched)" padding>Caste is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">WhatsApp Number</label>
+                            <ion-input [(ngModel)]="boothData.whatsappNo" placeholder="" type="text" name="whatsappNo" #whatsappNo="ngModel" required></ion-input>
+                            <p *ngIf="whatsappNo.errors && (whatsappNo.dirty || whatsappNo.touched)" padding>WhatsApp Number is required.</p>
+                        </ion-col>
+                        <ion-col>
+                            <label for="">Education</label>
+                            <ion-select [(ngModel)]="boothData.education" interface="popover" name="education" #education="ngModel" required>
+                                <ion-option value="Under Matriculation">Under Matriculation</ion-option>
+                                <ion-option value="Matriculation">Matriculation</ion-option>
+                                <ion-option value="PUC">PUC</ion-option>
+                                <ion-option value="Graduate">Graduate</ion-option>
+                                <ion-option value="Post Graduate">Post Graduate</ion-option>
+                                <ion-option value="Doctorate">Doctorate</ion-option>
+                                <ion-option value="Other">Other</ion-option>
+                                <ion-option value="No Info">No Info</ion-option>
+                            </ion-select>
+                            <p *ngIf="education.errors && (education.dirty || education.touched)" padding>Education is required.</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-3>
+                            <label for="">Profession</label>
+                            <ion-select [(ngModel)]="boothData.profession" interface="popover" name="profession" #profession="ngModel" required>
+                                <ion-option value="Agriculturist">Agriculturist</ion-option>
+                                <ion-option value="Business">Business</ion-option>
+                                <ion-option value="Employee">Employee</ion-option>
+                                <ion-option value="Labor">Labor</ion-option>
+                                <ion-option value="Lawyer">Lawyer</ion-option>
+                                <ion-option value="Doctor">Doctor</ion-option>
+                                <ion-option value="Engineer">Engineer</ion-option>
+                                <ion-option value="Teacher">Teacher</ion-option>
+                                <ion-option value="House Wife">House Wife</ion-option>
+                                <ion-option value="Social Activist">Social Activist</ion-option>
+                                <ion-option value="Coolie">Coolie</ion-option>
+                                <ion-option value="Driver">Driver</ion-option>
+                                <ion-option value="Student">Student</ion-option>
+                                <ion-option value="Jobless">Jobless</ion-option>
+                                <ion-option value="Other">Other</ion-option>
+                            </ion-select>
+                            <p *ngIf="profession.errors && (profession.dirty || profession.touched)" padding>Profession is required.</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+
+            <div class="booth-form">
+                <h3 class="sub-title">other information</h3>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <label for="">assembly constituency</label>
+                            <ion-input [(ngModel)]="boothData.assemblyConstituency" name="assemblyConstituency" #assemblyConstituency="ngModel" required
+                                placeholder="" type="text"></ion-input>
+                            <p *ngIf="assemblyConstituency.errors && (assemblyConstituency.dirty || assemblyConstituency.touched)" padding>assemblyConstituency is not valid.</p>
+                        </ion-col>
+
+                        <ion-col>
+                            <label for="">parent booth</label>
+                            <ion-select [(ngModel)]="boothData.parentBooth" interface="popover" name="parentBooth" #parentBooth="ngModel" required>
+                                <ion-option *ngFor="let booth of boothNumbers" [value]="booth.id">{{booth.boothNo}}</ion-option>
+                            </ion-select>
+                            <p *ngIf="parentBooth.errors && (parentBooth.dirty || parentBooth.touched)" padding>Parent Booth is required.</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+            <!-- <form ngNativeValidate name="boothForm1" #boothForm1="ngForm" novalidate>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <label for="">assembly constituency</label>
+                            <ion-input [(ngModel)]="boothData.assemblyConstituency" name="assemblyConstituency" #assemblyConstituency="ngModel" required
+                                placeholder="" type="text"></ion-input>
+                            <p *ngIf="assemblyConstituency.errors && (assemblyConstituency.dirty || assemblyConstituency.touched)" padding>assemblyConstituency is not valid.</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <button ion-button class="bjp-btn orange-btn" [disabled]="!boothForm1.form.valid" (click)="saveBooth()">save</button>
+            </form> -->
+            <div class="btn-group">
+                <button ion-button class="bjp-btn orange-btn" [disabled]="!boothForm.form.valid" (click)="saveBooth()">save</button>
+                <button ion-button class="bjp-btn grey-btn" (click)="view()">close</button>
+            </div>
+        </div>
+    </form>
 </ion-content>
 
 <page-footer></page-footer>

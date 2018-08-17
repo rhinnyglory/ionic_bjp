@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+// import { FormsModule } from '@angular/forms';
 
 import { MyApp } from './app.component';
 import { HeaderPage } from '../pages/header/header';
@@ -46,7 +47,8 @@ import { AddBoothProvider } from '../providers/add-booth/add-booth';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    // FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
